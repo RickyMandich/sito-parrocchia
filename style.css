@@ -19,12 +19,12 @@ header{
 }
 
 .right-header{
-    /* background-color: red; */
     font-size: 3.5vw;
 }
 
 a>img{
     width: 4vw;
+    height: 4vw;
 }
 
 .logo{
@@ -63,5 +63,52 @@ header>.right-header{
 }
 
 footer{
-    background-color: black;
+    background-color: rgb(46, 46, 46);
+    color: white;
+}
+
+#social{
+    position: relative;
+    height: 9vw;
+}
+
+#social>span{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+}
+
+#social>span::after{
+    content: "";
+    display: table;
+}
+
+#social>span:first-child{
+    left: 33.3%;
+    transform: translate(-50%, -50%);
+}
+
+#social>span:last-child{
+    right: 33.3%;
+    transform: translate(50%, -50%);
+}
+
+#social>span>a{
+    background-color: white;
+    border-radius: 50%;
+    border: 2vw solid white;
+    display: inline-block;
+}
+
+#crediti{
+    position: relative;
+    height: 14vw;
+}
+
+#crediti>span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.7vw;
 }
