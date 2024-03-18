@@ -19,7 +19,7 @@ header{
 }
 
 .right-header{
-    font-size: 3.5vw;
+    font-size: 3.3vw;
 }
 
 a>img{
@@ -142,4 +142,29 @@ div#link{
 
 #link>a:hover{
     text-decoration: underline;
+}
+
+.maiuscolo{
+    text-transform: uppercase;
+}
+
+.comparsaMenu{
+    display: none;
+}
+
+:hover>.comparsaMenu{
+    position: absolute;
+    display: block;
+}
+
+.nav{
+    background-color: blue;
+}
+
+.elemento{
+    display: inline-block;
+}
+
+.menu{
+    position: relative;
 }
