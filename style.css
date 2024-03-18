@@ -150,6 +150,7 @@ div#link{
 
 .comparsaMenu{
     display: none;
+    background-color: blue;
 }
 
 :hover>.comparsaMenu{
@@ -157,7 +158,7 @@ div#link{
     display: block;
 }
 
-.nav{
+nav{
     background-color: blue;
 }
 
