@@ -150,10 +150,9 @@ div#link{
 
 .comparsaMenu{
     display: none;
-    background-color: blue;
 }
 
-:hover>.comparsaMenu{
+:hover>.comparsaMenu, .comparsaMenu:hover{
     position: absolute;
     display: block;
 }
