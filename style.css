@@ -33,8 +33,6 @@ a>img{
     top: 50%;
     left: 60%;
     transform: translate(0%, -50%);
-    /* todo: erase display: none; */
-    display: none;
 }
 
 header>.right-header{
