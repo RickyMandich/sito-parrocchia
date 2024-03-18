@@ -33,6 +33,8 @@ a>img{
     top: 50%;
     left: 60%;
     transform: translate(0%, -50%);
+    /* todo: erase display: none; */
+    display: none;
 }
 
 header>.right-header{
@@ -102,7 +104,7 @@ footer{
 
 #crediti{
     position: relative;
-    height: 14vw;
+    height: 10vw;
 }
 
 #crediti>span{
@@ -110,5 +112,36 @@ footer{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.7vw;
+    font-size: 1.2vw;
+}
+
+div#riferimenti{
+    position: relative;
+    height: 14vh;
+    font-size: 1.2vw;
+}
+
+div#riferimenti>div{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+}
+
+div#contatti{
+    left: 33.3%;
+    transform: translate(-50%, -50%);
+}
+
+div#link{
+    right: 33.3%;
+    transform: translate(50%, -50%);
+}
+
+#link>a:visited, #link>a:link{
+    color: rgb(88, 88, 233);
+    text-decoration: none;
+}
+
+#link>a:hover{
+    text-decoration: underline;
 }
