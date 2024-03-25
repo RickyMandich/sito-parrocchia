@@ -152,8 +152,13 @@ div#link{
     display: none;
 }
 
-:hover>.comparsaMenu, .comparsaMenu:hover{
+:hover>.comparsaMenu{
     position: absolute;
+    display: block;
+    background-color: purple;
+}
+
+.comparsaMenu:hover{
     display: block;
 }
 
