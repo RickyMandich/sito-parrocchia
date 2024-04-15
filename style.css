@@ -9,7 +9,7 @@ body{
     font-size: 5.2vw;
     position: absolute;
     top: 50%;
-    transform: translate(0%, -50%);
+    transform: translate(0%, -70%);
 }
 
 header{
@@ -18,26 +18,20 @@ header{
     height: 25vh;
 }
 
-.right-header{
-    font-size: 3.3vw;
-}
-
 a>img{
     width: 4vw;
     height: 4vw;
 }
 
 .logo{
-    height: 100%;
-    position: absolute;
-    top: 50%;
-    left: 60%;
-    transform: translate(0%, -50%);
+    height: 15vw;
+    transform: translate(-15%, 30%);
 }
 
 header>.right-header{
+    font-size: 3.3vw;
     position: absolute;
-    right: 0%;
+    right: 0;
     top: 50%;
     transform: translate(-10px, -50%);
 }
