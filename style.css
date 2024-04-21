@@ -3,6 +3,7 @@ body{
     font-family: cursive;
     margin: 0;
     box-sizing: border-box;
+    color: white;
 }
 
 .titolo{
@@ -10,12 +11,19 @@ body{
     position: absolute;
     top: 50%;
     transform: translate(0%, -70%);
+    color: purple;
 }
 
 header{
     background-color: bisque;
     position: relative;
     height: 25vh;
+}
+
+header>div{
+    background-color: rgba(0, 0, 0, 0.10);
+    width: 100%;
+    height: 100%;
 }
 
 a>img{
@@ -28,7 +36,7 @@ a>img{
     transform: translate(-15%, 30%);
 }
 
-header>.right-header{
+header>div>.right-header{
     font-size: 3.3vw;
     position: absolute;
     right: 0;
@@ -58,7 +66,6 @@ header>.right-header{
 
 footer{
     background-color: rgb(46, 46, 46);
-    color: white;
 }
 
 #social{
@@ -142,29 +149,46 @@ div#link{
     text-transform: uppercase;
 }
 
-.comparsaMenu{
+.menuTendina{
+    width: 100%;
+    /*float: left;*/
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid black;
+    background: purple;
+}
+
+.menuTendina ul{
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    list-style-type: none;
+}
+
+.menuTendina>ul>li{
+    display: inline-block;
+    border: 0;
+    width: 49.5%;
+}
+
+.menuTendina li{
+    width: 100%;
+    /*float: left;*/
+    margin: 0;
+    padding: 0;
+    border-top: 10px solid purple;
+}
+
+.menuTendina li ul{
     display: none;
 }
 
-:hover>.comparsaMenu{
-    /* position: absolute; */
-    display: inline-block;
-    background-color: purple;
-}
-
-.comparsaMenu:hover{
+.menuTendina li:hover ul{
     display: block;
-}
-
-nav{
-    background-color: purple;
-    color: white;
-}
-
-.elemento{
-    display: inline-block;
-}
-
-.menu{
-    position: relative;
+    position: absolute;
+    z-index: 1;
+    width: 150px;
+    padding: 0;
+    margin: 0 0 0 -1px;
+    background: purple;
 }
