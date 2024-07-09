@@ -17,10 +17,10 @@ Questo file nel quale sono inserite tutte le spiegazioni
 ### cartella `img`
 
 #### `facebook.jpg`
-File contenente il logo di facebook da inserire nel sito
+File contenente il logo di Facebook da inserire nel sito
 
 #### `instagram.jpg`
-File contenente il logo di instagram da inserire nel sito
+File contenente il logo di Instagram da inserire nel sito
 
 #### `logo_v1.jpg`
 File contenente la versione iniziale del logo della parrocchia, è ancora nel progetto ma non la usiamo
