@@ -29,3 +29,5 @@ File contenente la versione iniziale del logo della parrocchia, è ancora nel pr
 File contenente il logo della parrocchia da inserire nel sito
 
 ## Da fare:
+
+- cercare in internet come si fa a far aprire un link (tag a) in una nuova scheda al click ( `index.html:34-36, 37-39` )
