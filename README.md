@@ -44,6 +44,6 @@ File contenente il logo della parrocchia da inserire nel sito
 ## Appunti per l'incontro del 2024-08-07
 
 - rivedere assieme le varie cose e concordare su come si vuole andare a costruire il sito, almeno a grandi linee
-- collegarsi al sito https://fonts.google.com/ e scegliere il font del sito
+- collegarsi al sito fonts.google.com e scegliere il font del sito
 - cercare di farsi almeno un'idea della palette di colori da usare
 - farsi dare da alessio tutti i recapiti della parrocchia così da metterli tutti nel footer del sito
