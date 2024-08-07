@@ -34,7 +34,7 @@ File contenente il logo di Instagram da inserire nel sito
 #### `logo_v1.jpg`
 File contenente la versione iniziale del logo della parrocchia, è ancora nel progetto ma non la usiamo
 
-#### `logo_v1.jpg`
+#### `logo_v2.jpg`
 File contenente il logo della parrocchia da inserire nel sito
 
 ## Da fare:
