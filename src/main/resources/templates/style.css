@@ -1,0 +1,198 @@
+a{
+    target: "_blank";
+}
+
+body{
+    background-color: rgb(185, 162, 237);
+    font-family: cursive;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+.titolo{
+    font-size: 5.2vw;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -70%);
+    color: purple;
+}
+
+header{
+    background-color: bisque;
+    position: relative;
+    height: 25vh;
+}
+
+header>div{
+    background-color: rgba(0, 0, 0, 0.10);
+    width: 100%;
+    height: 100%;
+}
+
+a>img{
+    width: 4vw;
+    height: 4vw;
+}
+
+.logo{
+    height: 15vw;
+    transform: translate(-15%, 30%);
+}
+
+header>div>.right-header{
+    font-size: 3.3vw;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-10px, -50%);
+}
+
+#ricerca{
+    width: 100%;
+    height: 9vh;
+    display: inline-block;
+}
+
+#ricerca>input{
+    height: 100%;
+    display: inline-block;
+    font-size: 50%;
+}
+
+#ricerca>input:first-child{
+    width: 76%;
+}
+
+#ricerca>input:last-child{
+    width: 20%;
+}
+
+footer{
+    background-color: rgb(46, 46, 46);
+}
+
+#social{
+    position: relative;
+    height: 9vw;
+}
+
+#social>span{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+}
+
+#social>span::after{
+    content: "";
+    display: table;
+}
+
+#social>span:first-child{
+    left: 33.3%;
+    transform: translate(-50%, -50%);
+}
+
+#social>span:last-child{
+    right: 33.3%;
+    transform: translate(50%, -50%);
+}
+
+#social>span>a{
+    background-color: white;
+    border-radius: 50%;
+    border: 2vw solid white;
+    display: inline-block;
+}
+
+#crediti{
+    position: relative;
+    height: 10vw;
+}
+
+#crediti>span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2vw;
+}
+
+div#riferimenti{
+    position: relative;
+    height: 14vh;
+    font-size: 1.2vw;
+}
+
+div#riferimenti>div{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+}
+
+div#contatti{
+    left: 33.3%;
+    transform: translate(-50%, -50%);
+}
+
+div#link{
+    right: 33.3%;
+    transform: translate(50%, -50%);
+}
+
+#link>a:visited, #link>a:link{
+    color: rgb(88, 88, 233);
+    text-decoration: none;
+}
+
+#link>a:hover{
+    text-decoration: underline;
+}
+
+.maiuscolo{
+    text-transform: uppercase;
+}
+
+.menuTendina{
+    width: 100%;
+    /*float: left;*/
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid black;
+    background: purple;
+}
+
+.menuTendina ul{
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    list-style-type: none;
+}
+
+.menuTendina>ul>li{
+    display: inline-block;
+    border: 0;
+    width: 49.5%;
+}
+
+.menuTendina li{
+    width: 100%;
+    /*float: left;*/
+    margin: 0;
+    padding: 0;
+    border-top: 10px solid purple;
+}
+
+.menuTendina li ul{
+    display: none;
+}
+
+.menuTendina li:hover ul{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: 150px;
+    padding: 0;
+    margin: 0 0 0 -1px;
+    background: purple;
+}
