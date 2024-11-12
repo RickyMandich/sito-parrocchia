@@ -9,7 +9,7 @@
         <script src="js.js"></script>
     </head>
     <body>
-        <?php require_once "instestazione.php";?>
+        <?php require_once "intestazione.php";?>
         <?php require_once "navigatore.php";?>
         <main>
             <br>
