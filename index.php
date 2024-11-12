@@ -11,7 +11,14 @@
         <?php require_once "instestazione.php";?>
         <?php require_once "navigatore.php";?>
         <main>
-            <br><br><br><br><br><br><br><br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
         </main>
         <?php require_once "footer.php";?>
         <span id="test"></span>
