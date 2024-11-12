@@ -21,6 +21,5 @@
             <br>
         </main>
         <?php require_once "footer.php";?>
-        <span id="test"></span>
     </body>
 </html>
