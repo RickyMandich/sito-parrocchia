@@ -16,7 +16,6 @@
             <br>
             <br>
             <br>
-            <?php echo $file?>
             <br>
             <br>
             <br>
