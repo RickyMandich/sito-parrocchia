@@ -197,3 +197,7 @@ div#link{
     text-align: center;
     align-items: center;
 }
+
+.articolo body{
+    text-align: justify;
+}
