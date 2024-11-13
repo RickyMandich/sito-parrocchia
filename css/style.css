@@ -202,7 +202,11 @@ div#link{
     text-align: justify;
 }
 
-.contenuto{
+.articolo .h1{
+    padding-top: 45px;
+}
+
+.articolo .contenuto{
     width: calc(100vw-200px);
     align-items: center;
     padding-left: 95px;
