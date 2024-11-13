@@ -203,7 +203,7 @@ div#link{
 }
 
 .contenuto{
-    width: calc(100vw-100px);
+    width: calc(100vw-200px);
     align-items: center;
-    padding: 45px;
+    padding: 95px;
 }
