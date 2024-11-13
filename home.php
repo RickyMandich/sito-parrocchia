@@ -9,14 +9,7 @@
         <?php require_once "intestazione.php";?>
         <?php require_once "navigatore.php";?>
         <main>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+            
         </main>
         <?php require_once "footer.php";?>
     </body>
