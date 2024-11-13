@@ -9,7 +9,7 @@
                 CHIARA
             </span>
             <span class="logo">
-                <img src="img/logo_v3.png" alt="logo parrocchia" class="logo">
+                <img src="/img/logo_v3.png" alt="logo parrocchia" class="logo">
             </span>
         </span>
         <br>
