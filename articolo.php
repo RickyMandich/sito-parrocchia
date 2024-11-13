@@ -8,7 +8,10 @@
     </head>
     <body>
         articolo
-        <?php echo $_GET["id"];
+        <?php
+        if(isset($_GET["id"])):
+            echo $_GET["id"];
+        endif;
         var_dump($_GET);?>
     </body>
 </html>
