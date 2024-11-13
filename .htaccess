@@ -8,7 +8,6 @@ RewriteEngine On
    RewriteCond %{REQUEST_FILENAME}\.html -f
    RewriteRule ^(.*)$ $1.html [L]
 
-   RewriteCond %{REQUEST_URI} ^/articolo/([0-9]+)$ [NC]
-   RewriteRule ^articolo/([0-9]+)$ articolo.php?id=%1 [L,QSA]
+   RewriteRule ^articolo/([0-9]+)/?$ articolo.php?id=$1 [L,QSA]
 # # av:php5-engine
 AddHandler av-php82 .php
