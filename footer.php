@@ -54,7 +54,7 @@
                     Alessio Maria Monti
                 </li>
                 <li>
-                    Barbara Zambon
+                    Barbara Scarpa
                 </li>
             </ul>
         </span>
