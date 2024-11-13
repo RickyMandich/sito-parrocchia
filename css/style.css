@@ -204,10 +204,11 @@ div#link{
 
 .articolo h1{
     padding-top: 45px;
+    font-size: xxx-large;
 }
 
 .articolo .contenuto{
-    width: calc(100vw-200px);
+    width: calc(100vw - 200px);
     align-items: center;
     padding-left: 95px;
     padding-right: 95px;
