@@ -3,7 +3,7 @@
 <html lang="it" class="<?php echo $file?>">
     <head>
         <?php require_once "metadati.php";?>
-        <title><?php echo $conn->query("select * from articoli where id = ".$_GET["id"])->fetch_assoc()["titolo"] ?? "Articolo";?></title>
+        <title><?php echo isset($_GET["id"]) ? $conn->query("select * from articoli where id = ".$_GET["id"])->fetch_assoc()["titolo"] : "articolo";?></title>
     </head>
     <body>
         <?php
