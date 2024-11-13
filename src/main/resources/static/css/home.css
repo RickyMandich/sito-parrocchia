@@ -122,6 +122,7 @@ div#riferimenti{
     position: relative;
     height: 14vh;
     font-size: 1.2vw;
+    margin: 5px;
 }
 
 div#riferimenti>div{
