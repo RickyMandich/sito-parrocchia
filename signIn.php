@@ -12,10 +12,6 @@
             <meta http-equiv="refresh" content="0; url=./profilo">
             <?php
         }
-        $conn = new mysqli("localhost","swudb","", "my_swudb", 3306);
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
         $resultText = "";
         $resultClass = "hidden";
         if(isset($_GET["nome"])){

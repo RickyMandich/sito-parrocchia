@@ -16,10 +16,6 @@ require_once("header.php");?>
                     <input type="text" name="query" id="query" value="<?php if(isset($_GET["query"])) echo $_GET["query"]; else echo "select * from "; ?>">
                 </form>
                 <?php
-                $conn = new mysqli("localhost","swudb","", "my_swudb", 3306);
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
                 var_dump($_GET["query"]);
                 if(str_contains($_GET["query"], "carte") and (!str_contains($_GET["query"], "leader") and !str_contains($_GET["query"], "base"))){
                     $carte = true;
