@@ -24,7 +24,12 @@
                     </h1>
                 <?php
                     endif;
-            endif;
+            else:?>
+                <h1 class="maiuscolo">
+                    articolo non trovato
+                </h1>
+            <?php
+                endif;
             require_once "footer.php";
         ?>
     </body>
