@@ -9,12 +9,21 @@
         $articolo = $conn->query("select * from articoli where id = ".$_GET["id"])->fetch_assoc();
     ?>
     <body>
-        <?php require_once "intestazione.php";?>
-        <?php require_once "navigatore.php";?>
-        <h1 class="maiuscolo">
-            <?php echo $articolo["titolo"];?>
-        </h1>
-        <?php echo $articolo["contenuto"];?>
-        <?php require_once "footer.php";?>
+        <?php if($articolo):?>
+            <?php
+                require_once "intestazione.php";
+                require_once "navigatore.php";?>
+            <h1 class="maiuscolo">
+                <?php echo $articolo["titolo"];?>
+            </h1>
+            <?php
+                echo $articolo["contenuto"];
+                require_once "footer.php";
+            ?>
+        <?php else:?>
+            <h1 class="maiuscolo">
+                articolo non trovato
+            </h1>
+        <?php endif; ?>
     </body>
 </html>
