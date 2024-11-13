@@ -203,15 +203,15 @@ div#link{
 }
 
 .articolo h1{
-    padding-top: 45px;
+    padding-top: 3vw;
     font-size: xxx-large;
 }
 
 .articolo .contenuto{
     width: 90vw;
     align-items: center;
-    padding-left: 95px;
-    padding-right: 95px;
-    padding-top: 45px;
-    padding-bottom: 95px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
 }
