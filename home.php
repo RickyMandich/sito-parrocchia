@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="it" xmlns="" class="<?php echo $file?>">
     <head>
-        <?php require_once "metadati";?>
+        <?php require_once "metadati.php";?>
         <title>Francesco & Chiara</title>
     </head>
     <body>
