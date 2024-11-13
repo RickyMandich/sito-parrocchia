@@ -1,4 +1,6 @@
-<?php require_once "header.php"?>
+<?php require_once "header.php"
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);?>
 <!DOCTYPE html>
 <html lang="en" class="<?php echo $file?>">
     <head>
