@@ -2,11 +2,8 @@
 <!DOCTYPE html>
 <html lang="it" xmlns="" class="<?php echo $file?>">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <?php require_once "metadati";?>
         <title>Francesco & Chiara</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="js.js"></script>
     </head>
     <body>
         <?php require_once "intestazione.php";?>
