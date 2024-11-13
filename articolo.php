@@ -15,9 +15,11 @@
                     <h1 class="maiuscolo">
                         <?php echo $articolo["titolo"];?>
                     </h1>
-                    <?php
-                        echo $articolo["contenuto"];
-                    ?>
+                    <div class="contenuto">
+                        <?php
+                            echo $articolo["contenuto"];
+                        ?>
+                    </div>
                 <?php else:?>
                     <h1 class="maiuscolo">
                         articolo non trovato
