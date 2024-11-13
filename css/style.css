@@ -205,5 +205,7 @@ div#link{
 .contenuto{
     width: calc(100vw-200px);
     align-items: center;
-    padding: 95px;
+    padding-left: 95px;
+    padding-right: 95px;
+    padding-top: 45px;
 }
