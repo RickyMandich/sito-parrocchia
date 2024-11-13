@@ -11,7 +11,7 @@
     <body>
         <?php require_once "intestazione.php";?>
         <?php require_once "navigatore.php";?>
-        <h1>
+        <h1 class="maiuscolo">
             <?php echo $articolo["titolo"];?>
         </h1>
         <?php echo $articolo["contenuto"];?>
