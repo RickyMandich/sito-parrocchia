@@ -192,3 +192,8 @@ div#link{
     margin: 0 0 0 -1px;
     background: purple;
 }
+
+.articolo h1{
+    text-align: center;
+    align-items: center;
+}
