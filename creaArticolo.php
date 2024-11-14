@@ -31,7 +31,7 @@ if(!isset($_SESSION["user"])){
                     crea nuovo articolo
                 </h1>
                 <form action="creaArticolo" method="post" enctype="multipart/form-data">
-                    <div class="from-group">
+                    <div class="form-group">
                         <input type="text" name="titolo" placeholder="titolo" id="titolo">
                     </div>
                     <div class="form-group">
