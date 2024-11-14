@@ -21,7 +21,7 @@
                         ?>
                     </div>
                     <div class="foto">
-                    <?php scanDirectory("../articoli")?>
+                    <?php scanDirectory("./articoli")?>
                     </div>
                 <?php else:?>
                     <h1 class="maiuscolo">
