@@ -26,25 +26,25 @@ if(!isset($_SESSION["user"])){
             }
             $conn->query("insert into articoli (titolo, contenuto) values('".$_POST["titolo"]."', '".$_POST["contenuto"]."');");
         }else{?>
-        <div class="container">
-            <div class="form-container">
-                <h1 class="maiuscolo">
-                    crea nuovo articolo
-                </h1>
-                <form action="creaArticolo" method="post" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <input type="text" name="titolo" placeholder="titolo" id="titolo">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="contenuto" id="contenuto" placeholder="contenuto"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input type="file" name="immagini[]" placeholder="file" id="immagini" multiple>
-                    </div>
-                    <input type="submit" value="carica articolo">
-                </form>
+            <div class="container">
+                <div class="form-container">
+                    <h1 class="maiuscolo">
+                        crea nuovo articolo
+                    </h1>
+                    <form action="creaArticolo" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <input type="text" name="titolo" placeholder="titolo" id="titolo">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="contenuto" id="contenuto" placeholder="contenuto"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="file" name="immagini[]" placeholder="file" id="immagini" multiple>
+                        </div>
+                        <input type="submit" value="carica articolo">
+                    </form>
+                </div>
             </div>
-        </div>
         <?php }?>
     </body>
 </html>
