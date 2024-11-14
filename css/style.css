@@ -222,11 +222,11 @@ div#link{
     white-space: nowrap;
     justify-content: center;
     margin-top: 3vw;
-    height: 40vh;
+    height: 45vh;
 }
 
 .articolo .foto img {
-    height: 40vw;
+    height: 40vh;
     width: auto;
     margin: 1.5vh;
     border-radius: 0.5vh;
