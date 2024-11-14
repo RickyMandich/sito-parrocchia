@@ -245,7 +245,3 @@ div#link{
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
-.search .searchResult:after {
-    content: "...";
-}
