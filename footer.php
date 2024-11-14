@@ -36,7 +36,10 @@
             <a target="_blank" href="https://www.facebook.com/ssfrancescoechiara?locale=it_IT">
                 Facebook della parrocchia
             </a>
-            <a target="_blank" href="mailto:ss.francescochiara@patriarcatovenezia.it">ss.francescochiara@patriarcatovenezia.it</a>
+            <br>
+            <a target="_blank" href="mailto:ss.francescochiara@patriarcatovenezia.it">
+                ss.francescochiara@patriarcatovenezia.it
+            </a>
         </div>
     </div>
     <hr>
