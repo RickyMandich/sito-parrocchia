@@ -25,6 +25,10 @@ if(!isset($_SESSION["user"])){
                 move_uploaded_file($tmp_name, $destination);
             }
             $conn->query("insert into articoli (titolo, contenuto) values('".$_POST["titolo"]."', '".$_POST["contenuto"]."');");
+            echo "articolo creato con successo";
+            ?>
+            <meta http-equiv="refresh" content="5; url=creaArticolo">
+            <?php
         }else{?>
             <div class="container">
                 <div class="form-container">
