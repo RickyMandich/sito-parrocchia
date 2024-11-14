@@ -1,5 +1,6 @@
 <?php
 session_start();
+header('Cache-Control: no-cache, no-store, must-revalidate');
 require_once "classi/Utente.php";
 $file = basename($_SERVER['PHP_SELF']);
 $file = preg_replace('/\?.*/', '', $file);
