@@ -9,9 +9,9 @@
         <title>Sign In</title>
     </head>
     <?php
-        if (isset($_SESSION["user"])){
+        if (!isset($_SESSION["user"])){
             ?>
-            <meta http-equiv="refresh" content="0; url=./profilo">
+            <meta http-equiv="refresh" content="0; url=./home">
             <?php
         }
         $resultText = "";
