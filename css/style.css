@@ -219,13 +219,13 @@ div#link{
 .articolo .foto {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 2vw;
     justify-content: center;
+    margin-top: 3vw;
 }
 
 .articolo .foto img {
-    max-width: 10vw;
+    max-width: 30vw;
     height: auto;
-    margin: 1rem;
-    border-radius: 4px;
+    margin: 1.5vh;
+    border-radius: 0.5vh;
 }
