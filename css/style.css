@@ -216,6 +216,16 @@ div#link{
     padding-bottom: 3vw;
 }
 
-.articolo .foto{
-    
+.articolo .foto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.articolo .foto img {
+    max-width: 300px;
+    height: auto;
+    margin: 1rem;
+    border-radius: 4px;
 }
