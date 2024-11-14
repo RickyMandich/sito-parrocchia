@@ -12,7 +12,10 @@ if(!isset($_SESSION["user"])){
         <title>crea articolo</title>
     </head>
     <body>
-        <?php if(isset($_POST["titolo"])){
+        <?php
+        require_once "intestazione.php";
+        require_once "navigatore.php";
+        if(isset($_POST["titolo"])){
             if($conn->query("select * from articoli where titolo = '".$_POST["titolo"]."'")->fetch_assoc()){
                 echo "non pui creare un'altro articolo con questo nome";
                 ?><meta http-equiv="refresh" content="5; url=creaArticolo"><?php
@@ -50,6 +53,7 @@ if(!isset($_SESSION["user"])){
                     </form>
                 </div>
             </div>
-        <?php }?>
+        <?php }
+        require_once "footer.php";?>
     </body>
 </html>
