@@ -16,6 +16,7 @@
         while($articolo=$resultSet->fetch_all()){
             ?>
             <span class="searchResult">
+                <?php var_dump($articolo);?>
                 <h2>
                     <?php echo $articolo["titolo"];?>
                 </h2>
