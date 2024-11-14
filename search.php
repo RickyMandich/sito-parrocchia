@@ -2,17 +2,17 @@
 <!DOCTYPE html>
 <html lang="it">
     <head>
-        <?php if(!isset($_GET["titolo"])){?><meta http-equiv="refresh" content="0; url=./home"><?php }?>
+        <?php if(!isset($_GET["search"])){?><meta http-equiv="refresh" content="0; url=./home"><?php }?>
         <?php require_once "metadati.php";?>
-        <title>Hai cercato <?php $_GET["titolo"];?></title>
+        <title>Hai cercato <?php $_GET["search"];?></title>
     </head>
     <body>
         <?php require_once "intestazione.php";
         require_once "navigatore.php";?>
         <h1>
-            hai cercato: <?php echo $_GET["titolo"];?>
+            hai cercato: <?php echo $_GET["search"];?>
         </h1>
-        <?php $resultSet = $conn->query("select * from articoli where titolo like '%".$_GET["titolo"]."%' order by id");
+        <?php $resultSet = $conn->query("select * from articoli where titolo like '%".$_GET["search"]."%' order by id");
         while($articolo=$resultSet->fetch_all()){
             var_dump($articolo);
         };?>
