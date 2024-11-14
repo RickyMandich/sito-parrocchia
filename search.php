@@ -9,7 +9,7 @@
     <body>
         <?php require_once "intestazione.php";
         require_once "navigatore.php";?>
-        <h1>
+        <h1 class="maiuscolo">
             hai cercato: <?php echo $_GET["search"];?>
         </h1>
         <?php $resultSet = $conn->query("select * from articoli where titolo like '%".$_GET["search"]."%' order by id");
