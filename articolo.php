@@ -20,7 +20,7 @@
                             echo $articolo["contenuto"];
                         ?>
                         <div class="foto">
-                            <?php scanDirectory("./articoli/".$articolo["titolo"]);?>
+                            <?php scanDirectory("./articoli/".str_replace(" ", "", $articolo["titolo"]));?>
                         </div>
                     </div>
                 <?php else:?>
