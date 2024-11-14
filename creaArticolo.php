@@ -11,7 +11,6 @@ if(!isset($_SESSION["user"])){
         <title>crea articolo</title>
     </head>
     <body>
-        <div class="container">
             <?php
             require_once "intestazione.php";
             require_once "navigatore.php";
@@ -53,6 +52,5 @@ if(!isset($_SESSION["user"])){
                 </div>
             <?php }
             require_once "footer.php";?>
-        </div>
     </body>
 </html>
