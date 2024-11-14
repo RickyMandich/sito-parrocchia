@@ -11,6 +11,7 @@ if(!isset($_SESSION["user"])){
         <title>crea articolo</title>
     </head>
     <body>
+        <div class="container">
             <?php
             require_once "intestazione.php";
             require_once "navigatore.php";
@@ -33,6 +34,7 @@ if(!isset($_SESSION["user"])){
                 <meta http-equiv="refresh" content="5; url=creaArticolo">
                 <?php
             }else{?>
+                <div class="form-container">
                     <h1 class="maiuscolo">
                         crea nuovo articolo
                     </h1>
@@ -48,7 +50,9 @@ if(!isset($_SESSION["user"])){
                         </div>
                         <input type="submit" value="carica articolo">
                     </form>
+                </div>
             <?php }
             require_once "footer.php";?>
+        </div>
     </body>
 </html>
