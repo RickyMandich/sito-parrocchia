@@ -223,6 +223,9 @@ div#link{
 }
 
 .articolo .foto img {
+    max-width: 300px;
+    height: auto;
+    justify-content: center;
     margin: 1rem;
     border-radius: 4px;
 }
