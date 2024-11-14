@@ -30,7 +30,7 @@ function scanDirectory($directory){
                 scanDirectory("$directory/$file");
             }else{
                 echo "test";
-                echo "img src=\"<?php echo \"\$directory/\$file\"?>\" alt=\"<?php echo \"\$directory/\$file\"?>\">";
+                //echo "img src=\"<?php echo \"\$directory/\$file\"?>\" alt=\"<?php echo \"\$directory/\$file\"?>\">";
                 ?>
                     <img src="<?php echo "$directory/$file"?>" alt="<?php echo "$directory/$file"?>">
                 <?php
