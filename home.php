@@ -9,7 +9,32 @@
         <?php require_once "intestazione.php";?>
         <?php require_once "navigatore.php";?>
         <main>
-            
+            <?php $resultSet = $conn->query("select * from articoli where pinnato = true order by id desc");
+            while($articolo=$resultSet->fetch_assoc()){
+                ?>
+                <span class="searchResult">
+                    <h2 class="maiuscolo">
+                        <a target="_blank" href="/articolo/<?php echo $articolo["id"]?>">
+                            <?php echo $articolo["titolo"];?>
+                        </a>
+                    </h2>
+                    <?php echo $articolo["contenuto"];?>
+                </span>
+                <?php
+            };?>
+            <?php $resultSet = $conn->query("select * from articoli where pinnato = false order by id desc");
+            while($articolo=$resultSet->fetch_assoc()){
+                ?>
+                <span class="searchResult">
+                    <h2 class="maiuscolo">
+                        <a target="_blank" href="/articolo/<?php echo $articolo["id"]?>">
+                            <?php echo $articolo["titolo"];?>
+                        </a>
+                    </h2>
+                    <?php echo $articolo["contenuto"];?>
+                </span>
+                <?php
+            };?>
         </main>
         <?php require_once "footer.php";?>
     </body>

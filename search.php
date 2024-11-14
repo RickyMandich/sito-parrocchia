@@ -12,7 +12,20 @@
         <h1 class="maiuscolo">
             hai cercato: <?php echo $_GET["search"];?>
         </h1>
-        <?php $resultSet = $conn->query("select * from articoli where titolo like '%".$_GET["search"]."%' order by id");
+        <?php $resultSet = $conn->query("select * from articoli where titolo like '%".$_GET["search"]."%' and pinnato = true order by id desc");
+        while($articolo=$resultSet->fetch_assoc()){
+            ?>
+            <span class="searchResult">
+                <h2 class="maiuscolo">
+                    <a target="_blank" href="/articolo/<?php echo $articolo["id"]?>">
+                        <?php echo $articolo["titolo"];?>
+                    </a>
+                </h2>
+                <?php echo $articolo["contenuto"];?>
+            </span>
+            <?php
+        };?>
+        <?php $resultSet = $conn->query("select * from articoli where titolo like '%".$_GET["search"]."%' and pinnato = false order by id desc");
         while($articolo=$resultSet->fetch_assoc()){
             ?>
             <span class="searchResult">
