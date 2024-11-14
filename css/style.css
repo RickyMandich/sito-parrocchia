@@ -244,5 +244,5 @@ div#link{
     max-height: 25vh;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding: 2vw;
+    /*padding-top: 2vh;*/
 }
