@@ -25,6 +25,6 @@ function scanDirectory($directory){
         }
         closedir($dir);
     }catch(Error $e){
-        $e->getMessage();
+        echo $e->getMessage();
     }
 }
