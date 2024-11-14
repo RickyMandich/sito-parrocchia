@@ -23,6 +23,6 @@ function scanDirectory($directory){
                 }
             }
         }
+        closedir($dir);
     }
-    closedir($dir);
 }
