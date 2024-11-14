@@ -17,7 +17,7 @@
             ?>
             <span class="searchResult">
                 <h2 class="maiuscolo">
-                    <a target="_blank" href="/articolo/<?php $articolo["id"]?>">
+                    <a target="_blank" href="/articolo/<?php echo $articolo["id"]?>">
                         <?php echo $articolo["titolo"];?>
                     </a>
                 </h2>
