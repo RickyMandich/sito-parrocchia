@@ -20,7 +20,7 @@
                             echo $articolo["contenuto"];
                         ?>
                         <div class="foto">
-                            <?php scanDirectory("./articoli")?>
+                            <?php scanDirectory("./articoli/".$_GET["id"])?>
                         </div>
                     </div>
                 <?php else:?>

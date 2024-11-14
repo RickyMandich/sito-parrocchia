@@ -21,7 +21,6 @@
                         <?php echo $articolo["titolo"];?>
                     </a>
                 </h2>
-                <?php var_dump($articolo)?>
                 <?php echo $articolo["contenuto"];?>
             </span>
             <?php
