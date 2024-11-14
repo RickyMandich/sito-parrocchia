@@ -16,12 +16,12 @@
         while($articolo=$resultSet->fetch_assoc()){
             ?>
             <span class="searchResult">
-                <?php var_dump($articolo)?>
                 <h2 class="maiuscolo">
                     <a target="_blank" href="/articolo/<?php $articolo["id"]?>">
                         <?php echo $articolo["titolo"];?>
                     </a>
                 </h2>
+                <?php var_dump($articolo)?>
                 <?php echo $articolo["contenuto"];?>
             </span>
             <?php
