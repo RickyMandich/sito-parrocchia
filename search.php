@@ -20,6 +20,7 @@
                     <a target="_blank" href="/articolo/<?php echo $articolo["id"]?>">
                         <?php echo $articolo["titolo"];?>
                     </a>
+                    &#128204;
                 </h2>
                 <?php echo $articolo["contenuto"];?>
             </span>
