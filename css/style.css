@@ -227,11 +227,11 @@ div#link{
     white-space: nowrap;
     justify-content: center;
     margin-top: 3vw;
-    height: 45vh;
+    max-height: 45vh;
 }
 
 .articolo .foto img {
-    height: 40vh;
+    max-height: 40vh;
     width: auto;
     margin: 1.5vh;
     border-radius: 0.5vh;
