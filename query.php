@@ -10,7 +10,10 @@ require_once("header.php");?>
         <title>query</title>
     </head>
     <body>
-        <?php if(isset($_SESSION["user"]) && unserialize($_SESSION["user"])->getID() === 0):?>
+        <?php 
+        require_once "intestazione.php";
+        require_once "navigatore.php";
+        if(isset($_SESSION["user"]) && unserialize($_SESSION["user"])->getID() === 0):?>
             <div class="container">
                 <form action="./query" method="get">
                     <input type="text" name="query" id="query" value="<?php if(isset($_GET["query"])) echo $_GET["query"]; else echo "select * from "; ?>">
@@ -134,8 +137,9 @@ require_once("header.php");?>
             ?>
         <?php elseif(isset($_SESSION["user"])):?>
             <meta http-equiv="refresh" content="0; url=./home">
-            <?php else: ?>
+        <?php else: ?>
             <meta http-equiv="refresh" content="0; url=./login?from=<?php echo $file; ?>">
-            <?php endif;?>
+        <?php endif;
+        require_once "footer.php";?>
     </body>
 </html>
