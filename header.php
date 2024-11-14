@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once "classi/Articolo.php";
 require_once "classi/Utente.php";
 $file = basename($_SERVER['PHP_SELF']);
 $file = preg_replace('/\?.*/', '', $file);
