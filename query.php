@@ -21,7 +21,7 @@ require_once("header.php");?>
                     $resultSet = $rs->fetch_assoc()?>
                     <div class="decks-section">
                         <div class="decks-container">
-                            <table>
+                            <table border>
                                 <thead>
                                     <tr class="deck-header">
                                         <?php foreach($resultSet as $column=>$value): ?>
