@@ -13,7 +13,7 @@
             hai cercato: <?php echo $_GET["search"];?>
         </h1>
         <?php $resultSet = $conn->query("select * from articoli where titolo like '%".$_GET["search"]."%' order by id");
-        while($articolo=$resultSet->fetch_all()){
+        while($articolo=$resultSet->fetch_assoc()){
             ?>
             <span class="searchResult">
                 <?php var_dump($articolo);?>
