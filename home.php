@@ -23,7 +23,7 @@
                 </span>
                 <?php
             };?>
-            <?php $resultSet = $conn->query("select * from articoli where pinnato = false order by id desc");
+            <?php $resultSet = $conn->query("select * from articoli where pinnato = false order by id desc limit 15");
             while($articolo=$resultSet->fetch_assoc()){
                 ?>
                 <span class="anteprimaArticolo">
