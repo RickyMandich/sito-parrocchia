@@ -14,7 +14,8 @@ if(!isset($_SESSION["user"])){
     <body>
         <?php if(isset($_POST["titolo"])){
             if($conn->query("select * from articoli where titolo = '".$_POST["titolo"]."'")->fetch_assoc()){
-                exit("non pui creare un'altro articolo con questo nome");
+                echo "non pui creare un'altro articolo con questo nome" ;
+                ?><meta http-equiv="refresh" content="5; url=creaArticolo"><?php
             }
             $dir = "articoli/".str_replace(" ", "", $_POST["titolo"]);
             mkdir($dir, 0755);
