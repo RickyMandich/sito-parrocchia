@@ -24,9 +24,9 @@ if(!isset($_SESSION["user"])){
             }
         }else{?>
             <form action="creaArticolo" method="post" enctype="multipart/form-data">
-                <input type="text" name="titolo" id="titolo">
-                <input type="text" name="contenuto" id="contenuto">
-                <input type="file" name="immagini[]" id="immagini" multiple>
+                <input type="text" name="titolo" placeholder="titolo" id="titolo">
+                <input type="text" name="contenuto" placeholder="contenuto" id="contenuto">
+                <input type="file" name="immagini[]" placeholder="file" id="immagini" multiple>
             </form>
         <?php }?>
     </body>
