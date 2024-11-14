@@ -11,14 +11,16 @@ if ($conn->connect_error) {
 }
 function scanDirectory($directory){
     $dir = @opendir($directory);
-    while (($file = readdir($dir)) !== false) {
-        if ($file != '.' && $file != '..') {
-            if(is_dir("$directory/$file")){
-                scanDirectory("$directory/$file");
-            }else{
-                ?>
-                    <img src="<?php echo "../$directory/$file"?>" alt="<?php echo "../$directory/$file"?>">
-                <?php
+    if ($dir === true) {
+        while (($file = readdir($dir)) !== false) {
+            if ($file != '.' && $file != '..') {
+                if(is_dir("$directory/$file")){
+                    scanDirectory("$directory/$file");
+                }else{
+                    ?>
+                        <img src="<?php echo "../$directory/$file"?>" alt="<?php echo "../$directory/$file"?>">
+                    <?php
+                }
             }
         }
     }
