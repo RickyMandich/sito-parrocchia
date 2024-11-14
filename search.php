@@ -12,7 +12,7 @@
         <h1>
             hai cercato: <?php echo $_GET["titolo"];?>
         </h1>
-        <?php var_dump($conn->query("select all from articoli where titolo like '%".$_GET["titolo"]."%' order by id"));?>
+        <?php var_dump($conn->query("select * all from articoli where titolo like '%".$_GET["titolo"]."%' order by id"));?>
         <?php require_once "footer.php";?>
     </body>
 </html>
