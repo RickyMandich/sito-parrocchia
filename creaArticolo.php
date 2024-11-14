@@ -19,7 +19,7 @@ if(!isset($_SESSION["user"])){
             mkdir($dir, 0755);
             foreach($_FILES["immagini"]["tmp_name"] as $index => $tmp_name) {
                 $file_name = str_replace(" ", "", $_FILES["immagini"]["name"][$index]);
-                $destination = $articolo_dir . "/" . $file_name;
+                $destination = $dir . "/" . $file_name;
                 move_uploaded_file($tmp_name, $destination);
             }
             $conn->query("insert into articoli (titolo, contenuto) values('".$_POST["titolo"]."', '".$_POST["contenuto"]."');");
