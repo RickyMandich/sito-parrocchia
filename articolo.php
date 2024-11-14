@@ -22,6 +22,7 @@
                     </div>
                     <div class="foto">
                     <?php $directory = '/';
+                    mkdir("./cartella", 0777);
                     // Verifica se la directory esiste
                     if (!file_exists($directory)) {
                         die("Errore: La directory $directory non esiste");
