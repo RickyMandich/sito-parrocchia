@@ -21,7 +21,7 @@
                         ?>
                     </div>
                     <div class="foto">
-                    <?php 
+                    <?php $directory = "./articoli"
                     // Verifica se la directory esiste
                     if (!file_exists($directory)) {
                         die("Errore: La directory $directory non esiste");
