@@ -16,7 +16,7 @@
         while($articolo=$resultSet->fetch_assoc()){
             ?>
             <span class="searchResult">
-                <h2>
+                <h2 class="maiuscolo">
                     <?php echo $articolo["titolo"];?>
                 </h2>
                 <?php echo $articolo["contenuto"];?>
