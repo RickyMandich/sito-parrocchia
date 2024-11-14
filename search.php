@@ -23,6 +23,7 @@
                     <?php if(isset($_SESSION["user"])){?>
                         <form action="removePin" style="display: inline-block">
                             <input type="hidden" name="id" value="<?php echo $articolo["id"]?>">
+                            <input type="hidden" name="from" value="search?search=<?php echo $_GET["search"]?>">
                             <input type="submit" value="&#128204;">
                         </form>
                     <?php }else{?>
@@ -41,6 +42,13 @@
                     <a target="_blank" href="/articolo/<?php echo $articolo["id"]?>">
                         <?php echo $articolo["titolo"];?>
                     </a>
+                    <?php if(isset($_SESSION["user"])){?>
+                        <form action="addPin" style="display: inline-block">
+                            <input type="hidden" name="id" value="<?php echo $articolo["id"]?>">
+                            <input type="hidden" name="from" value="search?search=<?php echo $_GET["search"]?>">
+                            <input type="submit" value="&#128204;">
+                        </form>
+                    <?php } ?>
                 </h2>
                 <?php echo substr($articolo["contenuto"], 0, 600);?>
             </span>
