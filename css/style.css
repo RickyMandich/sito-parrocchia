@@ -50,17 +50,17 @@ header>div>.right-header{
     display: inline-block;
 }
 
-#ricerca>input{
+#ricerca input{
     height: 100%;
     display: inline-block;
     font-size: 50%;
 }
 
-#ricerca>input:first-child{
+#ricerca input:first-child{
     width: 76%;
 }
 
-#ricerca>input:last-child{
+#ricerca input:last-child{
     width: 20%;
 }
 
