@@ -18,7 +18,7 @@ if(!isset($_SESSION["user"])){
             $dir = "articoli/".str_replace(" ", "", $_POST["titolo"]);
             mkdir($dir, 0755);
             foreach($_FILES["immagini"]["tmp_name"] as $index => $tmp_name) {
-                $file_name = $_FILES["immagini"]["name"][$index];
+                $file_name = str_replace(" ", "", $_FILES["immagini"]["name"][$index]);
                 $destination = $articolo_dir . "/" . $file_name;
                 move_uploaded_file($tmp_name, $destination);
             }
