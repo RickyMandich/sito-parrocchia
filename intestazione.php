@@ -25,7 +25,7 @@
             </span>
             <br>
             <span id="ricerca">
-                <form>
+                <form action="./search">
                     <input type="search" name="titolo" placeholder="Cerca">
                     <input type="submit" value="VAI">
                 </form>
