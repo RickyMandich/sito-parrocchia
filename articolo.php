@@ -19,9 +19,9 @@
                         <?php
                             echo $articolo["contenuto"];
                         ?>
-                    </div>
-                    <div class="foto">
-                    <?php scanDirectory("./articoli")?>
+                        <div class="foto">
+                            <?php scanDirectory("./articoli")?>
+                        </div>
                     </div>
                 <?php else:?>
                     <h1 class="maiuscolo">
