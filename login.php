@@ -10,7 +10,7 @@
     require_once("header.php");
         if (isset($_SESSION["user"])):
     ?>
-    <meta http-equiv="refresh" content="0; ./<?php echo $_GET["from"] ?? "profilo"?>">
+    <meta http-equiv="refresh" content="0; ./<?php echo $_GET["from"] ?? "home"?>">
     <?php else:
         $resultClass = "hidden";
         $resultText = "";
