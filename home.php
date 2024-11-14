@@ -19,7 +19,7 @@
                         </a>
                         &#128204;
                     </h2>
-                    <?php echo $articolo["contenuto"];?>
+                    <?php echo substr($articolo["contenuto"], 0, 600);?>
                 </span>
                 <?php
             };?>
@@ -32,7 +32,7 @@
                             <?php echo $articolo["titolo"];?>
                         </a>
                     </h2>
-                    <?php echo $articolo["contenuto"];?>
+                    <?php echo substr($articolo["contenuto"], 0, 600);?>
                 </span>
                 <?php
             };?>
