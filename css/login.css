@@ -106,3 +106,8 @@ input:focus {
 #result.hidden{
     display: none;
 }
+
+#contenuto{
+    width: 75vw;
+    height: 75vh;
+}
