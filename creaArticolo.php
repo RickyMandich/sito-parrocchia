@@ -22,6 +22,7 @@ if(!isset($_SESSION["user"])){
                 $destination = $articolo_dir . "/" . $file_name;
                 move_uploaded_file($tmp_name, $destination);
             }
+            $conn->query("insert into articoli (titolo, contenuto) values('".$_POST["titolo"]."', '".$_POST["contenuto"]."');");
         }else{?>
             <form action="creaArticolo" method="post" enctype="multipart/form-data">
                 <input type="text" name="titolo" placeholder="titolo" id="titolo">
