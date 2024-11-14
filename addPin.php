@@ -1,5 +1,5 @@
 <?php
-require_once "header";
+require_once "header.php";
 function countPinned($conn){
     $resultSet = $conn->query("select * from articoli where pinnato = true");
     $pin = 0;
