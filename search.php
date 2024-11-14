@@ -22,7 +22,7 @@
                     </a>
                     <?php if(isset($_SESSION["user"])){?>
                         <form action="removePin" style="display: inline-block">
-                            <input type="hidden" name="id" value="<?php $articolo["id"]?>">
+                            <input type="hidden" name="id" value="<?php echo $articolo["id"]?>">
                             <input type="submit" value="&#128204;">
                         </form>
                     <?php }else{?>
