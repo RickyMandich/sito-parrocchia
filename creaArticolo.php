@@ -27,6 +27,7 @@ if(!isset($_SESSION["user"])){
                 <input type="text" name="titolo" placeholder="titolo" id="titolo">
                 <input type="text" name="contenuto" placeholder="contenuto" id="contenuto">
                 <input type="file" name="immagini[]" placeholder="file" id="immagini" multiple>
+                <input type="submit" value="carica articolo">
             </form>
         <?php }?>
     </body>
