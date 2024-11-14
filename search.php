@@ -16,6 +16,7 @@
         while($articolo=$resultSet->fetch_assoc()){
             ?>
             <span class="searchResult">
+                <?php var_dump($articolo)?>
                 <h2 class="maiuscolo">
                     <a target="_blank" href="/articolo/<?php $articolo["id"]?>">
                         <?php echo $articolo["titolo"];?>
