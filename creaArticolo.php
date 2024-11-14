@@ -15,7 +15,7 @@ if(!isset($_SESSION["user"])){
             if($conn->query("select * from articoli where titolo = '".$_POST["titolo"]."'")->fetch_assoc()){
                 exit("non pui creare un'altro articolo con questo nome");
             }
-            $dir = "articoli/".str_replace(" ", "+", $_POST["titolo"]);
+            $dir = "articoli/".str_replace(" ", "", $_POST["titolo"]);
             mkdir($dir, 0755);
             foreach($_FILES["immagini"]["tmp_name"] as $index => $tmp_name) {
                 $file_name = $_FILES["immagini"]["name"][$index];
