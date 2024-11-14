@@ -36,7 +36,7 @@ if(!isset($_SESSION["user"])){
                         <input type="text" name="titolo" placeholder="titolo" id="titolo">
                     </div>
                     <div class="form-group">
-                        <input type="textarea" name="contenuto" placeholder="contenuto" id="contenuto">
+                        <textarea name="contenuto" id="contenuto"></textarea>
                     </div>
                     <div class="form-group">
                         <input type="file" name="immagini[]" placeholder="file" id="immagini" multiple>
