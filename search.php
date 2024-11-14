@@ -15,7 +15,7 @@
         <?php $resultSet = $conn->query("select * from articoli where titolo like '%".$_GET["search"]."%' and pinnato = true order by id desc");
         while($articolo=$resultSet->fetch_assoc()){
             ?>
-            <span class="searchResult">
+            <span class="anteprimaArticolo">
                 <h2 class="maiuscolo">
                     <a target="_blank" href="/articolo/<?php echo $articolo["id"]?>">
                         <?php echo $articolo["titolo"];?>
@@ -28,7 +28,7 @@
         <?php $resultSet = $conn->query("select * from articoli where titolo like '%".$_GET["search"]."%' and pinnato = false order by id desc");
         while($articolo=$resultSet->fetch_assoc()){
             ?>
-            <span class="searchResult">
+            <span class="anteprimaArticolo">
                 <h2 class="maiuscolo">
                     <a target="_blank" href="/articolo/<?php echo $articolo["id"]?>">
                         <?php echo $articolo["titolo"];?>

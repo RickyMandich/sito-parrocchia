@@ -237,7 +237,7 @@ div#link{
     border-radius: 0.5vh;
 }
 
-.search .searchResult{
+.anteprimaArticolo{
     background-color: blue;
     display: inline-block;
     max-width: 30vw;
