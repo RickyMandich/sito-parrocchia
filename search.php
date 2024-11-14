@@ -1,6 +1,6 @@
 <?php require_once "header.php";?>
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" class="<?php echo $file?>>
     <head>
         <?php if(!isset($_GET["search"])){?><meta http-equiv="refresh" content="0; url=./home"><?php }?>
         <?php require_once "metadati.php";?>
