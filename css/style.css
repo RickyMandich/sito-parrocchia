@@ -249,9 +249,9 @@ div#link{
 }
 
 .anteprimaArticolo form[action="removePin"] input[type="submit"]{
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 255, 0, 0);
 }
 
 .anteprimaArticolo form[action="addPin"] input[type="submit"]{
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 255, 0, 1);
 }
