@@ -26,9 +26,10 @@ function scanDirectory($directory){
     while (($file = readdir($dir)) !== false) {
         if ($file != '.' && $file != '..') {
             if(is_dir($directory.$file)){
+                echo "Cartella:".$file;
                 scanDirectory($directory.$file);
             }else{
-                echo $file."<br>";
+                echo "File:$file<br>";
             }
         }
     }
