@@ -11,29 +11,29 @@ if(!isset($_SESSION["user"])){
         <title>crea articolo</title>
     </head>
     <body>
-        <?php
-        require_once "intestazione.php";
-        require_once "navigatore.php";
-        if(isset($_POST["titolo"])){
-            if($conn->query("select * from articoli where titolo = '".$_POST["titolo"]."'")->fetch_assoc()){
-                echo "non pui creare un'altro articolo con questo nome";
-                ?><meta http-equiv="refresh" content="5; url=creaArticolo"><?php
-                exit;
-            }
-            $dir = "articoli/".str_replace(" ", "", $_POST["titolo"]);
-            mkdir($dir, 0755);
-            foreach($_FILES["immagini"]["tmp_name"] as $index => $tmp_name) {
-                $file_name = str_replace(" ", "", $_FILES["immagini"]["name"][$index]);
-                $destination = $dir . "/" . $file_name;
-                move_uploaded_file($tmp_name, $destination);
-            }
-            $conn->query("insert into articoli (titolo, contenuto) values('".$_POST["titolo"]."', '".$_POST["contenuto"]."');");
-            echo "articolo creato con successo";
-            ?>
-            <meta http-equiv="refresh" content="5; url=creaArticolo">
+        <div class="container">
             <?php
-        }else{?>
-            <div class="container">
+            require_once "intestazione.php";
+            require_once "navigatore.php";
+            if(isset($_POST["titolo"])){
+                if($conn->query("select * from articoli where titolo = '".$_POST["titolo"]."'")->fetch_assoc()){
+                    echo "non pui creare un'altro articolo con questo nome";
+                    ?><meta http-equiv="refresh" content="5; url=creaArticolo"><?php
+                    exit;
+                }
+                $dir = "articoli/".str_replace(" ", "", $_POST["titolo"]);
+                mkdir($dir, 0755);
+                foreach($_FILES["immagini"]["tmp_name"] as $index => $tmp_name) {
+                    $file_name = str_replace(" ", "", $_FILES["immagini"]["name"][$index]);
+                    $destination = $dir . "/" . $file_name;
+                    move_uploaded_file($tmp_name, $destination);
+                }
+                $conn->query("insert into articoli (titolo, contenuto) values('".$_POST["titolo"]."', '".$_POST["contenuto"]."');");
+                echo "articolo creato con successo";
+                ?>
+                <meta http-equiv="refresh" content="5; url=creaArticolo">
+                <?php
+            }else{?>
                 <div class="form-container">
                     <h1 class="maiuscolo">
                         crea nuovo articolo
@@ -51,8 +51,8 @@ if(!isset($_SESSION["user"])){
                         <input type="submit" value="carica articolo">
                     </form>
                 </div>
-            </div>
-        <?php }
-        require_once "footer.php";?>
+            <?php }
+            require_once "footer.php";?>
+        </div>
     </body>
 </html>
