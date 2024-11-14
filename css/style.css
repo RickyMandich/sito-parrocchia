@@ -235,4 +235,6 @@ div#link{
 .search .searchResult{
     background-color: blue;
     display: inline-block;
+    max-width: 40vw;
+    max-height: 40vh;
 }
