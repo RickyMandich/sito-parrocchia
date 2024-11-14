@@ -235,7 +235,7 @@ div#link{
 .search .searchResult{
     background-color: blue;
     display: inline-block;
-    max-width: 40vw;
+    max-width: 30vw;
     max-height: 25vh;
     overflow: hidden;
     text-overflow: ellipsis;
