@@ -29,7 +29,9 @@ function scanDirectory($directory){
                 echo "Cartella:$file<br>";
                 scanDirectory("$directory/$file");
             }else{
-                echo "File:$file<br>";
+                ?>
+                    <img src="<?php echo "$directory/$file"?>" alt="<?php echo "$directory/$file"?>">
+                <?php
             }
         }
     }

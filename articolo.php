@@ -21,33 +21,7 @@
                         ?>
                     </div>
                     <div class="foto">
-                    <?php $directory = "./articoli";
-                    // Verifica se la directory esiste
-                    if (!file_exists($directory)) {
-                        die("Errore: La directory $directory non esiste");
-                    }
-                    // Verifica i permessi
-                    if (!is_readable($directory)) {
-                        die("Errore: La directory $directory non è leggibile");
-                    }
-                    // Prova ad aprire la directory con gestione errori
-                    $dir = @opendir($directory);
-                    if ($dir === false) {
-                        die("Errore nell'apertura della directory: " . error_get_last()['message']);
-                    }
-                    while (($file = readdir($dir)) !== false) {
-                        if ($file != '.' && $file != '..') {
-                            if(is_dir("$directory/$file")){
-                                echo "Cartella:$file<br>";
-                                scanDirectory("$directory/$file");
-                            }else{
-                                ?>
-                                    <img src="<?php echo "$directory/$file"?>" alt="<?php echo "$directory/$file"?>">
-                                <?php
-                            }
-                        }
-                    }
-                    closedir($dir);?>
+                    <?php scandir("./articoli")?>
                     </div>
                 <?php else:?>
                     <h1 class="maiuscolo">
