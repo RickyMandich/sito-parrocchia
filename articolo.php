@@ -17,7 +17,7 @@
                     </h1>
                     <div class="contenuto">
                         <?php
-                            //echo $articolo["contenuto"];
+                            echo $articolo["contenuto"];
                         ?>
                     </div>
                     <div class="foto">
