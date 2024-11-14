@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 function scanDirectory($directory){
     $dir = @opendir($directory);
-    if ($dir === true) {
+    try{
         while (($file = readdir($dir)) !== false) {
             if ($file != '.' && $file != '..') {
                 if(is_dir("$directory/$file")){
@@ -24,5 +24,7 @@ function scanDirectory($directory){
             }
         }
         closedir($dir);
+    }catch(Error $e){
+        $e->getMessage();
     }
 }
