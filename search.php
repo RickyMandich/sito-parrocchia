@@ -20,7 +20,14 @@
                     <a target="_blank" href="/articolo/<?php echo $articolo["id"]?>">
                         <?php echo $articolo["titolo"];?>
                     </a>
-                    &#128204;
+                    <?php if(isset($_SESSION["user"])){?>
+                        <form action="removePin">
+                            <input type="hidden" name="id" value="<?php $articolo["id"]?>">
+                            <input type="submit" value="&#128204;">
+                        </form>
+                    <?php }else{?>
+                        &#128204;
+                    <?php } ?>
                 </h2>
                 <?php echo substr($articolo["contenuto"], 0, 600);?>
             </span>
