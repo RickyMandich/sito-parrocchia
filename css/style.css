@@ -234,4 +234,5 @@ div#link{
 
 .search .searchResult{
     background-color: blue;
+    display: inline-block;
 }
