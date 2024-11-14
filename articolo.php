@@ -22,6 +22,7 @@
                     </div>
                     <div class="foto">
                     <?php $dir = opendir('articoli');
+                    echo "opendir('articoli')";
                     var_dump($dir);
                     while (($file = readdir($dir)) !== false) {
                         if ($file != '.' && $file != '..') { // ignorare directory e parent directory
