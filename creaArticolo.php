@@ -6,8 +6,7 @@ if(!isset($_SESSION["user"])){
 <!DOCTYPE html>
 <html lang="it">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <?php require_once "metadati.php";?>
         <link rel="stylesheet" href="css/login.css">
         <title>crea articolo</title>
     </head>
