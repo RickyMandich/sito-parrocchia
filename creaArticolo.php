@@ -24,12 +24,26 @@ if(!isset($_SESSION["user"])){
             }
             $conn->query("insert into articoli (titolo, contenuto) values('".$_POST["titolo"]."', '".$_POST["contenuto"]."');");
         }else{?>
-            <form action="creaArticolo" method="post" enctype="multipart/form-data">
-                <input type="text" name="titolo" placeholder="titolo" id="titolo">
-                <input type="text" name="contenuto" placeholder="contenuto" id="contenuto">
-                <input type="file" name="immagini[]" placeholder="file" id="immagini" multiple>
-                <input type="submit" value="carica articolo">
-            </form>
+        <div class="container">
+            <div class="form-container">
+                <h1 class="maiuscolo">
+                    crea nuovo articolo
+                </h1>
+                <form action="creaArticolo" method="post" enctype="multipart/form-data">
+                    <div class="from-group">
+                        <input type="text" name="titolo" placeholder="titolo" id="titolo">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="contenuto" placeholder="contenuto" id="contenuto">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="immagini[]" placeholder="file" id="immagini" multiple>
+                    </div>
+                    <input type="submit" value="carica articolo">
+                </form>
+            </div>
+        </div>
+            
         <?php }?>
     </body>
 </html>
