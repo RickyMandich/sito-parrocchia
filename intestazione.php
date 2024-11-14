@@ -1,6 +1,6 @@
 <header>
     <div>
-        <span class="titolo">
+        <span class="titolo" onclick="window.location.href='/home'">
             <span class="Francesco">
                 FRANCESCO
             </span>
