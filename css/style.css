@@ -220,12 +220,12 @@ div#link{
     display: flex;
     flex-wrap: wrap;
     margin-top: 2vw;
+    justify-content: center;
 }
 
 .articolo .foto img {
     max-width: 10vw;
     height: auto;
-    justify-content: center;
     margin: 1rem;
     border-radius: 4px;
 }
