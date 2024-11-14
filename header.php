@@ -27,6 +27,8 @@ function scanDirectory($directory){
         if ($file != '.' && $file != '..') {
             if(is_dir($directory.$file)){
                 scanDirectory($directory.$file);
+            }else{
+                echo $file."<br>";
             }
         }
     }
