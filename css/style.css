@@ -6,6 +6,11 @@ body{
     color: white;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .titolo{
     font-size: 4.7vw;
     position: absolute;
@@ -243,4 +248,4 @@ div#link{
 
 .search .searchResult:after {
     content: "...";
-  }
+}
