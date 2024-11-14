@@ -7,7 +7,7 @@ body{
 }
 
 .titolo{
-    font-size: 4vw;
+    font-size: 4.5vw;
     position: absolute;
     top: 50%;
     transform: translate(0%, -70%);
