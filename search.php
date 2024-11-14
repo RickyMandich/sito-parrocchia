@@ -14,7 +14,14 @@
         </h1>
         <?php $resultSet = $conn->query("select * from articoli where titolo like '%".$_GET["search"]."%' order by id");
         while($articolo=$resultSet->fetch_all()){
-            var_dump($articolo);
+            ?>
+            <span class="searchResult">
+                <h2>
+                    <?php echo $articolo["titolo"];?>
+                </h2>
+                <?php echo $articolo["contenuto"];?>
+            </span>
+            <?php
         };?>
         <?php require_once "footer.php";?>
     </body>
