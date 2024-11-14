@@ -20,6 +20,15 @@
                             echo $articolo["contenuto"];
                         ?>
                     </div>
+                    <div class="foto">
+                    <?php $dir = opendir('./cartella');
+                    while (($file = readdir($dir)) !== false) {
+                        if ($file != '.' && $file != '..') { // ignorare directory e parent directory
+                            echo $file . "\n";
+                        }
+                    }
+                    closedir($dir);?>
+                    </div>
                 <?php else:?>
                     <h1 class="maiuscolo">
                         articolo non trovato
