@@ -15,7 +15,7 @@ if(!isset($_SESSION["user"])){
             <div style="heigth: 30vh"></div>
             <?php
             require_once "intestazione.php";
-            require_once "navigatore.php";
+            require_once "navigatore.php";/*
             if(isset($_POST["titolo"])){
                 if($conn->query("select * from articoli where titolo = '".$_POST["titolo"]."'")->fetch_assoc()){
                     echo "non pui creare un'altro articolo con questo nome";
@@ -53,6 +53,7 @@ if(!isset($_SESSION["user"])){
                     </form>
                 </div>
             <?php }
+            */
             require_once "footer.php";?>
         </div>
     </body>
