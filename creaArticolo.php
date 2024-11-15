@@ -12,7 +12,7 @@ if(!isset($_SESSION["user"])){
     </head>
     <body>
         <div class="container">
-            <div style="heigth: 30vh"></div>
+            <div style="height: 30vh"></div>
             <?php
             require_once "intestazione.php";
             require_once "navigatore.php";
