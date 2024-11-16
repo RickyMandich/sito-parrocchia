@@ -14,6 +14,7 @@ function scanDirectory($directory){
     $dir = @opendir($directory);
     try{
         while (($file = readdir($dir)) !== false) {
+            echo $file;
             if ($file != '.' && $file != '..') {
                 if(is_dir("$directory/$file")){
                     scanDirectory("$directory/$file");
