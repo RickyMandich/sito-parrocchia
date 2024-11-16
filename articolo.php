@@ -10,7 +10,7 @@ var_dump($_GET)?>
         <?php
             require_once "intestazione.php";
             require_once "navigatore.php";
-            if(!isset($_GET["edit"])):
+            if(isset($_GET["edit"])):
                 if(isset($_GET["id"])):
                     $articolo = $conn->query("select * from articoli where id = ".$_GET["id"])->fetch_assoc();
                     if($articolo):?>
@@ -30,7 +30,7 @@ var_dump($_GET)?>
                                 echo $articolo["contenuto"];
                             ?>
                             <div class="foto">
-                                <?php scanDirectory("./articoli/".str_replace(" ", "", $articolo["titolo"]));?>
+                                <?php scanDirectory("articoli/".str_replace(" ", "", $articolo["titolo"]));?>
                             </div>
                         </div>
                     <?php else:?>
@@ -38,12 +38,12 @@ var_dump($_GET)?>
                             articolo non trovato
                         </h1>
                     <?php endif;?>
+                <?php else:?>
+                    <h1 class="maiuscolo">
+                        articolo non trovato
+                    </h1>
                 <?php endif;?>
-            <?php else:?>
-                <h1 class="maiuscolo">
-                    articolo non trovato
-                </h1>
-            <?php endif;
+            <?php endif;?>
             require_once "footer.php";
         ?>
     </body>
