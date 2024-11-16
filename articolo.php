@@ -10,7 +10,7 @@ var_dump($_GET)?>
         <?php
             require_once "intestazione.php";
             require_once "navigatore.php";
-            if(!isset($_GET["edit"])):
+            if(!isset($_GET["edit"])){
                 if(isset($_GET["id"])):
                     $articolo = $conn->query("select * from articoli where id = ".$_GET["id"])->fetch_assoc();
                     if($articolo):?>
@@ -43,7 +43,32 @@ var_dump($_GET)?>
                         articolo non trovato
                     </h1>
                 <?php endif;?>
-            <?php endif;?>
+            <?php }elseif(isset($_GET["user"])){
+                if(isset($_GET["id"])):
+                    $articolo = $conn->query("select * from articoli where id = ".$_GET["id"])->fetch_assoc();
+                    if($articolo):?>
+                        <h1 class="maiuscolo">
+                            <?php echo $articolo["titolo"];?>
+                        </h1>
+                        <div class="contenuto">
+                            <?php
+                                echo $articolo["contenuto"];
+                            ?>
+                            <div class="foto">
+                                <?php scanDirectory("articoli/".str_replace(" ", "", $articolo["titolo"]));?>
+                            </div>
+                        </div>
+                    <?php else:?>
+                        <h1 class="maiuscolo">
+                            articolo non trovato
+                        </h1>
+                    <?php endif;?>
+                <?php else:?>
+                    <h1 class="maiuscolo">
+                        articolo non trovato
+                    </h1>
+                <?php endif;?>
+            <?php }?>
             <?php require_once "footer.php";?>
     </body>
 </html>
