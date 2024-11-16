@@ -12,6 +12,7 @@ if ($conn->connect_error) {
 function scanDirectory($directory){
     echo "scan di $directory";
     $dir = @opendir($directory);
+    var_dump($dir);
     try{
         while (($file = readdir($dir)) !== false) {
             echo $file;
