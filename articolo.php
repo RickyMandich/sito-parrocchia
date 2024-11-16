@@ -10,7 +10,7 @@ var_dump($_GET)?>
         <?php
             require_once "intestazione.php";
             require_once "navigatore.php";
-            if(isset($_GET["edit"])):
+            if(!isset($_GET["edit"])):
                 if(isset($_GET["id"])):
                     $articolo = $conn->query("select * from articoli where id = ".$_GET["id"])->fetch_assoc();
                     if($articolo):?>
@@ -44,7 +44,6 @@ var_dump($_GET)?>
                     </h1>
                 <?php endif;?>
             <?php endif;?>
-            require_once "footer.php";
-        ?>
+            <?php require_once "footer.php";?>
     </body>
 </html>
