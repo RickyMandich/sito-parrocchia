@@ -10,6 +10,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 function scanDirectory($directory){
+    echo "scan di $directory";
     $dir = @opendir($directory);
     try{
         while (($file = readdir($dir)) !== false) {
