@@ -29,7 +29,7 @@ var_dump($_GET)?>
                             echo $articolo["contenuto"];
                         ?>
                         <div class="foto">
-                            <?php scanDirectory("./articoli/".str_replace(" ", "", $articolo["titolo"]));?>
+                            <?php scanDirectory("/articoli/".str_replace(" ", "", $articolo["titolo"]));?>
                         </div>
                     </div>
                 <?php else:?>
