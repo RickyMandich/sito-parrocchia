@@ -9,7 +9,7 @@
         <?php
             require_once "intestazione.php";
             require_once "navigatore.php";
-            if(isset($_SESSION["user"])):
+            if(isset($_SESSION["user"]) or !isset($_SESSION["user"])):
                 if(isset($_GET["id"])):
                     $articolo = $conn->query("select * from articoli where id = ".$_GET["id"])->fetch_assoc();
                     if($articolo):?>
