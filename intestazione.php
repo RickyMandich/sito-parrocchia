@@ -25,7 +25,7 @@
             </span>
             <br>
             <span id="ricerca">
-                <form action="./search">
+                <form action="/search">
                     <input type="search" name="search" value="<?php if(isset($_GET["search"])) echo $_GET["search"];?>" placeholder="Cerca">
                     <input type="submit" value="VAI">
                 </form>
