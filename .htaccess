@@ -1,7 +1,7 @@
 RewriteEngine On
 
    RewriteRule ^articolo/([0-9]+)/?$ articolo.php?id=$1 [L,QSA]
-   RewriteRule ^articolo/([0-9]+)/?$ articolo.php?id=$1/edit [L,QSA]
+   RewriteRule ^articolo/([0-9]+)/edit?$ articolo.php?id=$1/edit [L,QSA]
 
    # Le tue regole esistenti
    RewriteCond %{REQUEST_FILENAME} !-d
