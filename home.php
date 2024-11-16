@@ -14,7 +14,7 @@
                 ?>
                 <span class="anteprimaArticolo">
                     <h2 class="maiuscolo">
-                        <a target="_blank" href="/articolo/<?php echo $articolo["id"]?>">
+                        <a href="/articolo/<?php echo $articolo["id"]?>">
                             <?php echo $articolo["titolo"];?>
                         </a>
                     <?php if(isset($_SESSION["user"])){?>
@@ -36,7 +36,7 @@
                 ?>
                 <span class="anteprimaArticolo">
                     <h2 class="maiuscolo">
-                        <a target="_blank" href="/articolo/<?php echo $articolo["id"]?>">
+                        <a href="/articolo/<?php echo $articolo["id"]?>">
                             <?php echo $articolo["titolo"];?>
                         </a>
                     <?php if(isset($_SESSION["user"])){?>
