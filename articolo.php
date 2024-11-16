@@ -1,5 +1,4 @@
-<?php require_once "header.php";
-var_dump($_GET)?>
+<?php require_once "header.php";?>
 <!DOCTYPE html>
 <html lang="it" class="<?php echo $file?>">
     <head>
