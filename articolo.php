@@ -43,7 +43,7 @@ var_dump($_GET)?>
                         articolo non trovato
                     </h1>
                 <?php endif;?>
-            <?php }elseif(isset($_GET["user"])){
+            <?php }elseif(isset($_SESSION["user"])){
                 if(isset($_GET["id"])):
                     $articolo = $conn->query("select * from articoli where id = ".$_GET["id"])->fetch_assoc();
                     if($articolo):?>
