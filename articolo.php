@@ -53,7 +53,9 @@ var_dump($_GET)?>
                                 <input type="text" value="<?php echo $articolo["titolo"];?>" name="titolo" placeholder="titolo" id="titolo">
                             </div>
                             <div class="form-group">
-                                <textarea name="contenuto" value="<?php echo $articolo["contenuto"]; ?>" id="contenuto" placeholder="contenuto"></textarea>
+                                <textarea name="contenuto" id="contenuto" placeholder="contenuto">
+                                    <?php echo $articolo["contenuto"]; ?>
+                                </textarea>
                             </div>
                             <input type="submit" value="salva articolo">
                         </form>
