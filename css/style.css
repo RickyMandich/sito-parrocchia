@@ -255,3 +255,8 @@ div#link{
 .anteprimaArticolo form[action="addPin"] input[type="submit"]{
     background-color: rgba(0, 255, 0, 1);
 }
+
+#contenuto{
+    width: 100%;
+    max-height: 20vh;
+}
