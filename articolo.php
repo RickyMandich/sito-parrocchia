@@ -4,7 +4,7 @@ var_dump($_GET)?>
 <html lang="it" class="<?php echo $file?>">
     <head>
         <?php require_once "metadati.php";?>
-        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="/css/login.css">
         <title><?php echo isset($_GET["id"]) ? $conn->query("select * from articoli where id = ".$_GET["id"])->fetch_assoc()["titolo"] : "articolo";?></title>
     </head>
     <body>
