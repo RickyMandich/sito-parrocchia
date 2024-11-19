@@ -47,13 +47,19 @@ var_dump($_GET)?>
                 if(isset($_GET["id"])):
                     $articolo = $conn->query("select * from articoli where id = ".$_GET["id"])->fetch_assoc();
                     if($articolo):?>
-                        <h1 class="maiuscolo">
-                            <?php echo $articolo["titolo"];?>
-                        </h1>
+                        <form action="creaArticolo" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="text" value="<?php echo $articolo["titolo"];?>" name="titolo" placeholder="titolo" id="titolo">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="contenuto" value="<?php echo $articolo["contenuto"]; ?>" id="contenuto" placeholder="contenuto"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" name="immagini[]" placeholder="file" id="immagini" multiple>
+                            </div>
+                            <input type="submit" value="carica articolo">
+                        </form>
                         <div class="contenuto">
-                            <?php
-                                echo $articolo["contenuto"];
-                            ?>
                             <div class="foto">
                                 <?php scanDirectory("articoli/".str_replace(" ", "", $articolo["titolo"]));?>
                             </div>
