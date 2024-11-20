@@ -17,9 +17,15 @@ function scanDirectory($directory){
                 if(is_dir("$directory/$file")){
                     scanDirectory("$directory/$file");
                 }else{
+                    if(isset($_GET["edit"])){
+                        ?><div class="removeImage"><?php
+                    }
                     ?>
                         <img src="<?php echo (isset($_GET["edit"])?"../":"")."../$directory/$file"?>" alt="<?php echo "../$directory/$file"?>">
-                    <?php
+                        <?php
+                        if(isset($_GET["edit"])){
+                    ?></div><?php
+                    }
                 }
             }
         }
