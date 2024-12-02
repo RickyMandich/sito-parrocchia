@@ -10,7 +10,7 @@ var_dump($_GET)?>
         <?php
             require_once "intestazione.php";
             require_once "navigatore.php";
-            if(!isset($_GET["edit"])){
+            if(!isset($_GET["edit"]) and !isset($_GET["saveArticolo"])){
                 if(isset($_GET["id"])):
                     $articolo = $conn->query("select * from articoli where id = ".$_GET["id"])->fetch_assoc();
                     if($articolo):?>
@@ -73,6 +73,10 @@ var_dump($_GET)?>
                         articolo non trovato
                     </h1>
                 <?php endif;?>
+            <?php }elseif(isset($_GET["saveArticolo"])){
+                $conn->query("update articoli set titolo = '".str_replace("'", "\'", $_POST["titolo"])."', contenuto = '".str_replace("'", "\'", $_POST["contenuto"])."', where id = ".$_GET["id"]);
+            }else{?>
+                <meta http-equiv="refresh" content="0; url=login">
             <?php }?>
             <?php require_once "footer.php";?>
     </body>
