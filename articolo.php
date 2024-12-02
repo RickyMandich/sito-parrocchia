@@ -43,7 +43,14 @@ var_dump($_GET)?>
                         articolo non trovato
                     </h1>
                 <?php endif;?>
-            <?php }elseif(isset($_SESSION["user"])){
+            <?php }else{
+                if(!isset($_SESSION["user"])){
+                    ?>
+                        <meta http-equiv="refresh" content="0; url=login?from=articolo/<?php $get["id"]?>">
+                    <?php
+                }
+            }
+            if(isset($_SESSION["edit"])){
                 if(isset($_GET["id"])):
                     $articolo = $conn->query("select * from articoli where id = ".$_GET["id"])->fetch_assoc();
                     if($articolo):?>
@@ -52,9 +59,7 @@ var_dump($_GET)?>
                                 <input type="text" value="<?php echo $articolo["titolo"];?>" name="titolo" placeholder="titolo" id="titolo">
                             </div>
                             <div class="form-group">
-                                <textarea name="contenuto" id="contenuto" placeholder="contenuto">
-                                    <?php echo $articolo["contenuto"]; ?>
-                                </textarea>
+                                <textarea name="contenuto" id="contenuto" placeholder="contenuto"><?php echo $articolo["contenuto"]; ?></textarea>
                             </div>
                             <input type="submit" value="salva articolo">
                         </form>
