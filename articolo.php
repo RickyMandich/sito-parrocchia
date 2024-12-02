@@ -80,9 +80,8 @@ var_dump($_GET)?>
                 <?php endif;?>
             <?php }elseif(isset($_GET["saveArticolo"])){
                 $conn->query("update articoli set titolo = '".str_replace("'", "\'", $_POST["titolo"])."', contenuto = '".str_replace("'", "\'", $_POST["contenuto"])."', where id = ".$_GET["id"]);
-            }else{?>
-                <meta http-equiv="refresh" content="0; url=login">
-            <?php }?>
+                ?><meta http-equiv="refresh" content="0; url=/articolo/<?php echo $_GET["id"]?>"><?php
+            }?>
             <?php require_once "footer.php";?>
     </body>
 </html>
