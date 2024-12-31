@@ -4,11 +4,7 @@ if (isset($_POST['contenuto'])) {
     $id = $_GET['id'];
     $contenuto = $conn->real_escape_string($_POST['contenuto']);
     $sql = "UPDATE articoli SET contenuto='$contenuto' WHERE id=$id";
-    if ($conn->query($sql) === TRUE) {
-        echo "Record updated successfully";
-    } else {
-        echo "Error updating record: " . $conn->error;
-    }
+    $conn->query($sql);
 }
 
 var_dump($_GET);
