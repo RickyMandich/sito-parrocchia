@@ -14,6 +14,7 @@
                 ?>
                 <span class="anteprimaArticolo">
                     <h2 class="maiuscolo">
+                        <?php echo "bhi";?>
                         <a href="/articolo/<?php echo $articolo["id"]?>">
                             <?php echo $articolo["titolo"];?>
                         </a>
