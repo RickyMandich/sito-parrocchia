@@ -14,7 +14,6 @@
                 ?>
                 <span class="anteprimaArticolo">
                     <h2 class="maiuscolo">
-                        <?php echo "bhi";?>
                         <a href="/articolo/<?php echo $articolo["id"]?>">
                             <?php echo $articolo["titolo"];?>
                         </a>
@@ -28,8 +27,7 @@
                         &#128204;
                     <?php } ?>
                     </h2>
-                    <?php var_dump($articolo["contenuto"]);
-                    echo "<br>".substr($articolo["contenuto"], 10, 60);?>
+                    <?php echo substr($articolo["contenuto"], 10, 60);?>
                 </span>
                 <?php
             };?>
