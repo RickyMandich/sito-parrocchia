@@ -9,7 +9,7 @@
         <?php require_once "intestazione.php";?>
         <?php require_once "navigatore.php";?>
         <main>
-            <?php $resultSet = $conn->query("select * from articoli order by pinnato, id desc");
+            <?php $resultSet = $conn->query("select * from articoli order by pinnato desc, id desc");
             while($articolo=$resultSet->fetch_assoc()){
                 ?>
                 <span class="anteprimaArticolo">
