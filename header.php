@@ -34,5 +34,9 @@ function scanDirectory($directory){
     }
 }
 function troncaAnteprimaArticolo($contenuto){
-    return substr($contenuto, 0, 360)."...";
+    $troncato = substr($contenuto, 0, 360);
+    if($troncato != $contenuto){
+        return $troncato."...";
+    }
+    return $troncato;
 }
