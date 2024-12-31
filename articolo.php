@@ -8,80 +8,40 @@ var_dump($_GET)?>
     </head>
     <body>
         <?php
-            require_once "intestazione.php";
-            require_once "navigatore.php";
-            if(!isset($_GET["edit"]) and !isset($_GET["saveArticolo"])){
-                if(isset($_GET["id"])):
-                    $articolo = $conn->query("select * from articoli where id = ".$_GET["id"])->fetch_assoc();
-                    if($articolo):?>
-                        <h1 class="maiuscolo">
-                            <?php echo $articolo["titolo"];?>
-                            <?php if($_SESSION["user"]):?>
-                                <form action="./<?php echo $_GET["id"];?>/edit">
-                                    <input type="image" src="/img/edit.jpg" alt="modifica l'articolo">
-                                </form>
-                                <form action="/delete">
-                                    <input type="image" src="/img/delete.jpg" alt="elimina l'articolo">
-                                </form>
-                            <?php endif;?>
-                        </h1>
-                        <div class="contenuto">
-                            <?php
-                                echo $articolo["contenuto"];
-                            ?>
-                            <div class="foto">
-                                <?php scanDirectory("articoli/".str_replace(" ", "", $articolo["titolo"]));?>
-                            </div>
-                        </div>
-                    <?php else:?>
-                        <h1 class="maiuscolo">
-                            articolo non trovato
-                        </h1>
-                    <?php endif;?>
-                <?php else:?>
-                    <h1 class="maiuscolo">
-                        articolo non trovato
-                    </h1>
-                <?php endif;?>
-            <?php }else{
-                if(!isset($_SESSION["user"])){
-                    ?>
-                        <meta http-equiv="refresh" content="0; url=login?from=articolo/<?php $get["id"]?>">
-                    <?php
-                }
-            }
-            if(isset($_SESSION["edit"])){
-                if(isset($_GET["id"])):
-                    $articolo = $conn->query("select * from articoli where id = ".$_GET["id"])->fetch_assoc();
-                    if($articolo):?>
-                        <form action="saveArticolo" method="post" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <input type="text" value="<?php echo $articolo["titolo"];?>" name="titolo" placeholder="titolo" id="titolo">
-                            </div>
-                            <div class="form-group">
-                                <textarea name="contenuto" id="contenuto" placeholder="contenuto"><?php echo $articolo["contenuto"]; ?></textarea>
-                            </div>
-                            <input type="submit" value="salva articolo">
+        require_once "intestazione.php";
+        require_once "navigatore.php";
+        if(isset($_GET["id"])):
+            $articolo = $conn->query("select * from articoli where id = ".$_GET["id"])->fetch_assoc();
+            if($articolo):?>
+                <h1 class="maiuscolo">
+                    <?php echo $articolo["titolo"];?>
+                    <?php if($_SESSION["user"]):?>
+                        <form action="./<?php echo $_GET["id"];?>/edit">
+                            <input type="image" src="/img/edit.jpg" alt="modifica l'articolo">
                         </form>
-                        <div class="contenuto">
-                            <div class="foto">
-                                <?php scanDirectory("articoli/".str_replace(" ", "", $articolo["titolo"]));?>
-                            </div>
-                        </div>
-                    <?php else:?>
-                        <h1 class="maiuscolo">
-                            articolo non trovato
-                        </h1>
+                        <form action="/delete">
+                            <input type="image" src="/img/delete.jpg" alt="elimina l'articolo">
+                        </form>
                     <?php endif;?>
-                <?php else:?>
-                    <h1 class="maiuscolo">
-                        articolo non trovato
-                    </h1>
-                <?php endif;?>
-            <?php }elseif(isset($_GET["saveArticolo"])){
-                $conn->query("update articoli set titolo = '".str_replace("'", "\'", $_POST["titolo"])."', contenuto = '".str_replace("'", "\'", $_POST["contenuto"])."', where id = ".$_GET["id"]);
-                ?><meta http-equiv="refresh" content="0; url=/articolo/<?php echo $_GET["id"]?>"><?php
-            }?>
-            <?php require_once "footer.php";?>
+                </h1>
+                <div class="contenuto">
+                    <?php
+                    echo $articolo["contenuto"];
+                    ?>
+                    <div class="foto">
+                        <?php scanDirectory("articoli/".str_replace(" ", "", $articolo["titolo"]));?>
+                    </div>
+                </div>
+            <?php else:?>
+                <h1 class="maiuscolo">
+                    articolo non trovato
+                </h1>
+            <?php endif;?>
+        <?php else:?>
+            <h1 class="maiuscolo">
+                articolo non trovato
+            </h1>
+        <?php endif;?>
+        <?php require_once "footer.php";?>
     </body>
 </html>
