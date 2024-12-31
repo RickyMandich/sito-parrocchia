@@ -12,7 +12,7 @@
         <h1 class="maiuscolo">
             hai cercato: <?php echo $_GET["search"];?>
         </h1>
-        <?php $resultSet = $conn->query("select * from articoli where titolo like '%".$_GET["search"]."%' and pinnato = true order by id desc");
+        <?php $resultSet = $conn->query("select * from articoli where titolo like '%".$_GET["search"]."%' and pinnato = true order by pinnato desc, id desc");
         while($articolo=$resultSet->fetch_assoc()){
             ?>
             <span class="anteprimaArticolo">
@@ -20,35 +20,17 @@
                     <a href="/articolo/<?php echo $articolo["id"]?>">
                         <?php echo $articolo["titolo"];?>
                     </a>
-                    <?php if(isset($_SESSION["user"])){?>
-                        <form action="removePin" style="display: inline-block">
-                            <input type="hidden" name="id" value="<?php echo $articolo["id"]?>">
-                            <input type="hidden" name="from" value="search?search=<?php echo $_GET["search"]?>">
-                            <input type="submit" value="&#128204;">
-                        </form>
-                    <?php }else{?>
-                        &#128204;
-                    <?php } ?>
-                </h2>
-                <?php echo substr($articolo["contenuto"], 0, 600);?>
-            </span>
-            <?php
-        };?>
-        <?php $resultSet = $conn->query("select * from articoli where titolo like '%".$_GET["search"]."%' and pinnato = false order by id desc");
-        while($articolo=$resultSet->fetch_assoc()){
-            ?>
-            <span class="anteprimaArticolo">
-                <h2 class="maiuscolo">
-                    <a  href="/articolo/<?php echo $articolo["id"]?>">
-                        <?php echo $articolo["titolo"];?>
-                    </a>
-                    <?php if(isset($_SESSION["user"])){?>
-                        <form action="addPin" style="display: inline-block">
-                            <input type="hidden" name="id" value="<?php echo $articolo["id"]?>">
-                            <input type="hidden" name="from" value="search?search=<?php echo $_GET["search"]?>">
-                            <input type="submit" value="&#128204;">
-                        </form>
-                    <?php } ?>
+                    <?php if($articolo["pinnato"] == "1"):?>
+                        <?php if(isset($_SESSION["user"])){?>
+                            <form action="removePin" style="display: inline-block">
+                                <input type="hidden" name="id" value="<?php echo $articolo["id"]?>">
+                                <input type="hidden" name="from" value="home">
+                                <input type="submit" value="&#128204;">
+                            </form>
+                        <?php }else{?>
+                            &#128204;
+                        <?php } ?>
+                <?php endif;?>
                 </h2>
                 <?php echo troncaAnteprimaArticolo($articolo["contenuto"]);?>
             </span>
@@ -57,5 +39,3 @@
         <?php require_once "footer.php";?>
     </body>
 </html>
-
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi
