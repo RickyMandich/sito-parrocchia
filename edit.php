@@ -1,5 +1,19 @@
-<?php require_once "header.php";
-var_dump($_GET)?>
+<?php
+require_once "header.php";
+
+if (isset($_POST['contenuto'])) {
+    $id = $_GET['id'];
+    $contenuto = $conn->real_escape_string($_POST['contenuto']);
+    $sql = "UPDATE articoli SET contenuto='$contenuto' WHERE id=$id";
+    if ($conn->query($sql) === TRUE) {
+        echo "Record updated successfully";
+    } else {
+        echo "Error updating record: " . $conn->error;
+    }
+}
+
+var_dump($_GET);
+?>
 <!DOCTYPE html>
 <html lang="it" class="<?php echo $file?>">
     <head>
@@ -31,7 +45,7 @@ var_dump($_GET)?>
                         </form>
                     <?php endif;?>
                 </h1>
-                <form method="post" action="salva_articolo.php">
+                <form method="post" action="edit/<?php echo $_GET["id"];?>">
                     <textarea class="inputContenuto" name="contenuto" oninput="aggiornaDiv()"><?php echo $articolo["contenuto"]; ?></textarea>
                     <div class="contenuto">
                         <?php
@@ -41,7 +55,6 @@ var_dump($_GET)?>
                     <div class="foto">
                         <?php scanDirectory("articoli/".str_replace(" ", "", $articolo["titolo"]));?>
                     </div>
-                    <input type="hidden" name="id" value="<?php echo $_GET["id"]; ?>">
                     <button type="submit">Salva</button>
                 </form>
             <?php else:?>
