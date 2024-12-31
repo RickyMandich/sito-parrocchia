@@ -1,5 +1,4 @@
-<?php
-require_once "header.php";
+<?php require_once "header.php";
 
 if (isset($_POST['contenuto'])) {
     $id = $_GET['id'];
@@ -23,7 +22,7 @@ var_dump($_GET);
             .inputContenuto {
                 width: 100%;
                 height: auto;
-                min-height: 200px; /* Adjust this value as needed */
+                min-height: 200px;
             }
         </style>
     </head>
@@ -36,16 +35,8 @@ var_dump($_GET);
             if($articolo):?>
                 <h1 class="maiuscolo">
                     <?php echo $articolo["titolo"];?>
-                    <?php if($_SESSION["user"]):?>
-                        <form action="./<?php echo $_GET["id"];?>/edit">
-                            <input type="image" src="/img/approve.jpg" alt="guarda l'articolo">
-                        </form>
-                        <form action="/delete">
-                            <input type="image" src="/img/delete.jpg" alt="elimina l'articolo">
-                        </form>
-                    <?php endif;?>
                 </h1>
-                <form method="post" action="edit/<?php echo $_GET["id"];?>">
+                <form method="post" action="/edit/<?php echo $_GET["id"];?>">
                     <textarea class="inputContenuto" name="contenuto" oninput="aggiornaDiv()"><?php echo $articolo["contenuto"]; ?></textarea>
                     <div class="contenuto">
                         <?php
