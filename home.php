@@ -27,7 +27,8 @@
                         &#128204;
                     <?php } ?>
                     </h2>
-                    <?php echo substr($articolo["contenuto"], 10, 60);?>
+                    <?php var_dump($articolo["contenuto"]);
+                    echo "<br>".substr($articolo["contenuto"], 10, 60);?>
                 </span>
                 <?php
             };?>
