@@ -33,3 +33,6 @@ function scanDirectory($directory){
     }catch(Error $e){
     }
 }
+function troncaAnteprimaArticolo($contenuto){
+    return substr($contenuto, 10, 360)."...";
+}

@@ -50,7 +50,7 @@
                         </form>
                     <?php } ?>
                 </h2>
-                <?php echo substr($articolo["contenuto"], 0, 360);?>
+                <?php echo troncaAnteprimaArticolo($articolo["contenuto"]);?>
             </span>
             <?php
         };?>

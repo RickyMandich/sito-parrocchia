@@ -29,7 +29,7 @@
                             <?php } ?>
                     <?php endif;?>
                     </h2>
-                    <?php echo substr($articolo["contenuto"], 10, 360)."...";?>
+                    <?php echo troncaAnteprimaArticolo($articolo["contenuto"]);?>
                 </span>
                 <?php
             };?>
