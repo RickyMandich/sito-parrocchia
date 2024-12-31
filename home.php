@@ -17,7 +17,8 @@
                         <a href="/articolo/<?php echo $articolo["id"]?>">
                             <?php echo $articolo["titolo"];?>
                         </a>
-                        <?php if($articolo["pinnato"] == "true"):?>
+                        <?php echo $articolo["pinnato"];
+                        if($articolo["pinnato"] == "true"):?>
                             <?php if(isset($_SESSION["user"])){?>
                                 <form action="removePin" style="display: inline-block">
                                     <input type="hidden" name="id" value="<?php echo $articolo["id"]?>">
