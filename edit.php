@@ -37,9 +37,9 @@ var_dump($_GET)?>
                         <?php
                         echo $articolo["contenuto"];
                         ?>
-                        <div class="foto">
-                            <?php scanDirectory("articoli/".str_replace(" ", "", $articolo["titolo"]));?>
-                        </div>
+                    </div>
+                    <div class="foto">
+                        <?php scanDirectory("articoli/".str_replace(" ", "", $articolo["titolo"]));?>
                     </div>
                     <input type="hidden" name="id" value="<?php echo $_GET["id"]; ?>">
                     <button type="submit">Salva</button>
