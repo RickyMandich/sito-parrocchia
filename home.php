@@ -27,7 +27,7 @@
                         &#128204;
                     <?php } ?>
                     </h2>
-                    <?php echo substr($articolo["contenuto"], 0, [$length = 60]);?>
+                    <?php echo substr($articolo["contenuto"], 0, 60);?>
                 </span>
                 <?php
             };?>
