@@ -16,10 +16,10 @@ var_dump($_GET)?>
                 <h1 class="maiuscolo">
                     <?php echo $articolo["titolo"];?>
                     <?php if($_SESSION["user"]):?>
-                        <form action="./<?php echo $_GET["id"];?>/edit">
+                        <form action="/edit/<?php echo $_GET["id"];?>">
                             <input type="image" src="/img/edit.jpg" alt="modifica l'articolo">
                         </form>
-                        <form action="/delete">
+                        <form action="/delete/<?php echo $_GET["id"];?>">
                             <input type="image" src="/img/delete.jpg" alt="elimina l'articolo">
                         </form>
                     <?php endif;?>
