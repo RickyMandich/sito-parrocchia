@@ -5,6 +5,13 @@ var_dump($_GET)?>
     <head>
         <?php require_once "metadati.php";?>
         <title><?php echo isset($_GET["id"]) ? $conn->query("select * from articoli where id = ".$_GET["id"])->fetch_assoc()["titolo"] : "articolo";?></title>
+        <style>
+            .inputContenuto {
+                width: 100%;
+                height: auto;
+                min-height: 200px; /* Adjust this value as needed */
+            }
+        </style>
     </head>
     <body>
         <?php
