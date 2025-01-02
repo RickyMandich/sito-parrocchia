@@ -11,7 +11,7 @@
         <title>Sign In</title>
     </head>
     <?php
-        if (!admin()){
+        if (isset($_SESSION["user"])) {
             ?>
             <meta http-equiv="refresh" content="0; url=./home">
             <?php
@@ -21,7 +21,19 @@
         if(isset($_GET["nome"])){
             try{
                 $codiceDiAttivazione = rand(1000000000, 9999999999);
+                $query = $conn->query("SELECT email FROM utenti WHERE abilitazione = 0");
+                $subject = "Nuovo utente registrato";
+                $message = "Un nuovo utente si è registrato a santifrancescoechiara.altervista.org\n\n";
+                $message .= "Nome: " . $_GET["nome"] . "\n";
+                $message .= "Email: " . $_GET["email"] . "\n\n";
+                $message .= "Per abilitare l'utente come admin, clicca sul seguente link:\n";
+                $message .= "santifrancescoechiara.altervista.org/abilitazione?a=" . $codiceDiAttivazione;
+                $headers = 'From: no-reply@santifrancescoechiara.altervista.org' . "\r\n";
                 $insert = $conn->query("insert into utenti (nome, email, password, abilitazione) values('".$_GET["nome"]."', '".$_GET["email"]. "', '". $_GET["password"]."', $codiceDiAttivazione)");
+                while ($row = $query->fetch_assoc()) {
+                    $to = $row['email'];
+                    mail($to, $subject, $message, $headers);
+                }
                 $resultText = "registrazione avvenuta con successo, ora accedi";
                 $resultClass = "success";
                 ?><meta http-equiv="refresh" content="3; url=./login?from=<?php echo $_GET["from"] ?? "home"; ?>"><?php
