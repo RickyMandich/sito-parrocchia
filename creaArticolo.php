@@ -31,6 +31,14 @@ if(!admin()){
                 }
                 $conn->query("insert into articoli (titolo, contenuto) values('".$_POST["titolo"]."', '".$_POST["contenuto"]."');");
                 echo "articolo creato con successo";
+                $subject = $_POST["titolo"];
+                $message = "ciao <utente> abbiamo caricato un nuovo articolo sul sito della parrocchia!!!";
+                $headers = "From: no-reply@santifrancescoechiara.altervista.org\r\n";
+                $query = $conn->query("select email, nome from utenti");
+                while ($row = $query->fetch_assoc()) {
+                    $to = $row['email'];
+                    mail($to, $subject, str_replace("<utente", $row["nome"], $message), $headers);
+                }
                 ?>
                 <meta http-equiv="refresh" content="5; url=creaArticolo">
                 <?php
