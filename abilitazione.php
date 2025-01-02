@@ -10,5 +10,7 @@ if (isset($_GET['a'])) {
         echo "impossibile abilitare l'utente, controllare quale può essere il problema sapendo che il codice di abilitazione fornito è $abilitazione e che a <a href='https://santifrancescoechiara.altervista.org/query?query=select+nome%2C+email%2C+abilitazione+from+utenti'>questa pagina</a> puoi vedere i codice di abilitazione di tutti (se il valore è 0 l'utente è già abilitato)";
     }
 } else {
-    echo "codice di ";
+    ?>
+    <meta http-equiv="refresh" content="0; url=/home">
+    <?php
 }
