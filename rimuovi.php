@@ -7,7 +7,7 @@ if (isset($_GET['id'])) {
     $titolo = $conn->query("select titolo from articoli where id = $id")->fetch_assoc()['titolo'];
 
     // Elimina il record dalla tabella articoli
-    $sql = "DELETE FROM articles WHERE id = $id";
+    $sql = "DELETE FROM articoli WHERE id = $id";
     if ($conn->query($sql) === TRUE) {
         // Rimuovi la cartella corrispondente dai file sorgente
         $folderPath = "articoli/" . str_replace(" ", "-", $titolo);
