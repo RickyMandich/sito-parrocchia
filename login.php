@@ -8,7 +8,7 @@
     </head>
     <?php
     require_once("header.php");
-        if (isset($_SESSION["user"])):
+        if (admin()):
     ?>
     <meta http-equiv="refresh" content="0; ./<?php echo $_GET["from"] ?? "home"?>">
     <?php else:
@@ -20,7 +20,7 @@
             if($resultSet["password"] === $_GET["password"]):
                 $resultText = "accesso eseguito con successo";
                 $resultClass = "success";
-                $_SESSION["user"] = serialize(new Utente($resultSet["nome"], $resultSet["id"], $resultSet["email"], $resultSet["password"]));
+                $_SESSION["user"] = serialize(new Utente($resultSet["nome"], $resultSet["id"], $resultSet["email"], $resultSet["password"], $resultSet["abilitazione"]));
             ?>
             <meta http-equiv="refresh" content="2; url=./<?php echo $_GET["from"] ?? "profilo"?>">
             <?php

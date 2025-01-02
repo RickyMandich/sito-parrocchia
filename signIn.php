@@ -11,7 +11,7 @@
         <title>Sign In</title>
     </head>
     <?php
-        if (!isset($_SESSION["user"])){
+        if (!admin()){
             ?>
             <meta http-equiv="refresh" content="0; url=./home">
             <?php
@@ -20,7 +20,8 @@
         $resultClass = "hidden";
         if(isset($_GET["nome"])){
             try{
-                $insert = $conn->query("insert into utenti (nome, email, password) values('".$_GET["nome"]."', '".$_GET["email"]. "', '". $_GET["password"]."')");
+                $codiceDiAttivazione = rand(1000000000, 9999999999);
+                $insert = $conn->query("insert into utenti (nome, email, password, abilitazione) values('".$_GET["nome"]."', '".$_GET["email"]. "', '". $_GET["password"]."', $codiceDiAttivazione)");
                 $resultText = "registrazione avvenuta con successo, ora accedi";
                 $resultClass = "success";
                 ?><meta http-equiv="refresh" content="3; url=./login?from=<?php echo $_GET["from"] ?? "home"; ?>"><?php

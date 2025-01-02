@@ -40,3 +40,10 @@ function troncaAnteprimaArticolo($contenuto){
     }
     return $troncato;
 }
+
+function admin(){
+    if(isset($_SESSION["user"])){
+        return unserialize($_SESSION["user"])->getAbilitazione() == 0;
+    }
+    return false;
+}

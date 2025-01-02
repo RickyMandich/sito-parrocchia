@@ -1,5 +1,5 @@
 <?php require_once "header.php";
-if(!isset($_SESSION["user"])){
+if(!admin()){
     ?><meta http-equiv="refresh" content="0; url=login?from=creaArticolo"><?php
 }
 ?>

@@ -11,7 +11,7 @@ require_once("header.php");?>
         require_once "intestazione.php";
         require_once "navigatore.php";
         try{
-            if(isset($_SESSION["user"])):?>
+            if(admin()):?>
                 <div class="container">
                     <form action="./query" method="get">
                         <input type="text" name="query" id="query" value="<?php if(isset($_GET["query"])) echo $_GET["query"]; else echo "select * from "; ?>">
@@ -52,7 +52,7 @@ require_once("header.php");?>
                     echo "ho fatto ".$conn->affected_rows." modifiche";
                     endif;
                 ?>
-            <?php elseif(isset($_SESSION["user"])):?>
+            <?php elseif(admin()):?>
                 <meta http-equiv="refresh" content="0; url=./home">
             <?php else: ?>
                 <meta http-equiv="refresh" content="0; url=./login?from=<?php echo $file; ?>">

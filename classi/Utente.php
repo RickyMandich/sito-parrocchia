@@ -4,12 +4,14 @@
         private $id;
         private $email;
         private $password;
+        private $abilitazione;
 
-        function __construct(string $nome, int $id, string $email, string $password){
+        function __construct(string $nome, int $id, string $email, string $password, int $abilitazione){
             $this->nome = $nome;
             $this->id = $id;
             $this->email = $email;
             $this->password = $password;
+            $this->abilitazione = $abilitazione;
         }
 
         public function getNome(): string{
@@ -23,5 +25,8 @@
         }
         public function getPassword(): string{
             return $this->password;
+        }
+        public function getAbilitazione(): int{
+            return $this->abilitazione;
         }
     }

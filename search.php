@@ -21,7 +21,7 @@
                         <?php echo $articolo["titolo"];?>
                     </a>
                     <?php if($articolo["pinnato"] == "1"):?>
-                        <?php if(isset($_SESSION["user"])){?>
+                        <?php if(admin()){?>
                             <form action="removePin" style="display: inline-block">
                                 <input type="hidden" name="id" value="<?php echo $articolo["id"]?>">
                                 <input type="hidden" name="from" value="home">

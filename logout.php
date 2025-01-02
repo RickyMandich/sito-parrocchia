@@ -1,7 +1,7 @@
 <?php
 echo "ciao";
 require_once("header.php");
-if(isset($_SESSION["user"])){
+if(admin()){
     unset($_SESSION["user"]);
 }
 ?>
