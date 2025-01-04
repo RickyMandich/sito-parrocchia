@@ -9,18 +9,18 @@
         while($row = $result->fetch_assoc()){
             array_push($menu, $row);
         }
+        ?><ul><?php
         foreach($menu as $voce){
             ?>
-            <ul>
                 <li>
                     <a href='<?php echo $voce['link']?>'>
                         <?php echo $voce['nome']?>
                     </a>
                     <?php if(hasSubElement($voce['id'])) generaMenu($voce['id']); ?>
                 </li>
-            </ul>
-        <?php
+                <?php
         }
+        ?></ul><?php
     }
 ?>
 <nav class="maiuscolo menuTendina">
