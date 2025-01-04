@@ -66,7 +66,14 @@ function generaAnteprimaArticolo($articolo){
                     <?php }else{?>
                         &#128204;
                     <?php } ?>
-            <?php endif;?>
+                <?php else:?>
+                    <?php if(admin()){?>
+                        <form action="addPin" style="display: inline-block">
+                            <input type="hidden" name="id" value="<?php echo $articolo["id"]?>">
+                            <input type="hidden" name="from" value="home">
+                            <input type="submit" value="&#128204;">
+                        </form>
+                    <?php } ?>
             </h2>
             <?php
                 $articolo["contenuto"] = strip_tags(preg_replace("/<table>.*?<\/table>/", "", $articolo["contenuto"]), "<br>");
