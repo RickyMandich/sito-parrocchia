@@ -74,6 +74,7 @@ function generaAnteprimaArticolo($articolo){
                             <input type="submit" value="&#128204;">
                         </form>
                     <?php } ?>
+                <?php endif;?>
             </h2>
             <?php
                 $articolo["contenuto"] = strip_tags(preg_replace("/<table>.*?<\/table>/", "", $articolo["contenuto"]), "<br>");
