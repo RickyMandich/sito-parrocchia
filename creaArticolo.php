@@ -29,7 +29,7 @@ if(!admin()){
                     $destination = $dir . "/" . $file_name;
                     move_uploaded_file($tmp_name, $destination);
                 }
-                $conn->query("insert into articoli (titolo, contenuto) values('".$_POST["titolo"]."', '".$_POST["contenuto"]."');");
+                $conn->query("insert into articoli (titolo, contenuto) values('".$_POST["titolo"]."', '".str_replace("\n", "<br>", $_POST["contenuto"])."');");
                 echo "articolo creato con successo";
                 $subject = $_POST["titolo"];
                 $message = "ciao <utente> abbiamo caricato un nuovo articolo sul sito della parrocchia!!!";

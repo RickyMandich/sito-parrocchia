@@ -33,7 +33,7 @@ var_dump($_GET);
                     <?php echo $articolo["titolo"];?>
                 </h1>
                 <form method="post" action="/edit/<?php echo $_GET["id"];?>">
-                    <textarea class="inputContenuto" name="contenuto" oninput="aggiornaDiv()"><?php echo $articolo["contenuto"]; ?></textarea>
+                    <textarea class="inputContenuto" name="contenuto" oninput="aggiornaDiv()"><?php echo str_replace("\n", "<br>", $articolo["contenuto"]); ?></textarea>
                     <div class="contenuto">
                         <?php
                         echo $articolo["contenuto"];
@@ -59,7 +59,7 @@ var_dump($_GET);
 </html>
 <script>
 function aggiornaDiv() {
-    var textareaContent = document.querySelector('.inputContenuto').value;
+    var textareaContent = document.querySelector('.inputContenuto').value.replace(/\n/g, '<br>');
     document.querySelector('.contenuto').innerHTML = textareaContent;
 }
 </script>
