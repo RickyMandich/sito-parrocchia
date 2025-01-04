@@ -26,7 +26,7 @@ var_dump($_GET)?>
                 </h1>
                 <div class="contenuto">
                     <?php
-                    echo $articolo["contenuto"];
+                    echo str_replace("\n", "<br>", $articolo["contenuto"]);
                     ?>
                     <div class="foto">
                         <?php scanDirectory("articoli/".str_replace(" ", "", $articolo["titolo"]));?>
