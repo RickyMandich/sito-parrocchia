@@ -58,6 +58,9 @@ var_dump($_GET);
     </body>
 </html>
 <script>
+    window.onload = function(){
+        aggiornaDiv();
+    }
 function aggiornaDiv() {
     var textareaContent = document.querySelector('.inputContenuto').value.replace(/\n/g, '<br>');
     document.querySelector('.contenuto').innerHTML = textareaContent;
