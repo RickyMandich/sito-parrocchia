@@ -69,7 +69,7 @@ function generaAnteprimaArticolo($articolo){
             <?php endif;?>
             </h2>
             <?php
-                $articolo["contenuto"] = strip_tags($articolo["contenuto"]);
+                $articolo["contenuto"] = strip_tags($articolo["contenuto"], "<br>");
             ?>
             <?php echo troncaAnteprimaArticolo($articolo["contenuto"]);?>
         </span>
