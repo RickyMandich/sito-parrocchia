@@ -33,7 +33,7 @@ var_dump($_GET);
                     <?php echo $articolo["titolo"];?>
                 </h1>
                 <form method="post" action="/edit/<?php echo $_GET["id"];?>">
-                    <textarea class="inputContenuto" name="contenuto" oninput="aggiornaDiv()"><?php echo str_replace("\n", "<br>", $articolo["contenuto"]); ?></textarea>
+                    <textarea class="inputContenuto" name="contenuto" oninput="aggiornaDiv()"><?php echo str_replace("<br>", "\n", $articolo["contenuto"]); ?></textarea>
                     <div class="contenuto">
                         <?php
                         echo $articolo["contenuto"];
