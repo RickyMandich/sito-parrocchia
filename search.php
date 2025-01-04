@@ -12,29 +12,9 @@
         <h1 class="maiuscolo">
             hai cercato: <?php echo $_GET["search"];?>
         </h1>
-        <?php $resultSet = $conn->query("select * from articoli where titolo like '%".$_GET["search"]."%' and pinnato = true order by pinnato desc, id desc");
+        <?php $resultSet = $conn->query("select * from articoli where titolo like '%".$_GET["search"]."%' order by pinnato desc, id desc");
         while($articolo=$resultSet->fetch_assoc()){
-            ?>
-            <span class="anteprimaArticolo">
-                <h2 class="maiuscolo">
-                    <a href="/articolo/<?php echo $articolo["id"]?>">
-                        <?php echo $articolo["titolo"];?>
-                    </a>
-                    <?php if($articolo["pinnato"] == "1"):?>
-                        <?php if(admin()){?>
-                            <form action="removePin" style="display: inline-block">
-                                <input type="hidden" name="id" value="<?php echo $articolo["id"]?>">
-                                <input type="hidden" name="from" value="home">
-                                <input type="submit" value="&#128204;">
-                            </form>
-                        <?php }else{?>
-                            &#128204;
-                        <?php } ?>
-                <?php endif;?>
-                </h2>
-                <?php echo troncaAnteprimaArticolo($articolo["contenuto"]);?>
-            </span>
-            <?php
+            generaAnteprimaArticolo($articolo);
         };?>
         <?php require_once "footer.php";?>
     </body>
