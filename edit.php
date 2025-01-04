@@ -34,11 +34,7 @@ var_dump($_GET);
                 </h1>
                 <form method="post" action="/edit/<?php echo $_GET["id"];?>">
                     <textarea class="inputContenuto" name="contenuto" oninput="aggiornaDiv()"><?php echo str_replace("<br>", "\n", $articolo["contenuto"]); ?></textarea>
-                    <div class="contenuto">
-                        <?php
-                        echo $articolo["contenuto"];
-                        ?>
-                    </div>
+                    <div class="contenuto"></div>
                     <div class="foto">
                         <?php scanDirectory("articoli/".str_replace(" ", "", $articolo["titolo"]));?>
                     </div>
