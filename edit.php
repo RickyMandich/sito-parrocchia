@@ -33,7 +33,7 @@ var_dump($_GET);
                     <?php echo $articolo["titolo"];?>
                 </h1>
                 <form method="post" action="/edit/<?php echo $_GET["id"];?>">
-                    <textarea class="inputContenuto" name="contenuto" oninput="aggiornaDiv()"><?php echo str_replace("<br>", "\n", $articolo["contenuto"]); ?></textarea>
+                    <textarea class="inputContenuto" name="contenuto" oninput="aggiornaDiv()"><?php echo $articolo["contenuto"]; ?></textarea>
                     <div class="contenuto"></div>
                     <div class="foto">
                         <?php scanDirectory("articoli/".str_replace(" ", "", $articolo["titolo"]));?>
@@ -59,6 +59,7 @@ var_dump($_GET);
     }
 function aggiornaDiv() {
     var textareaContent = document.querySelector('.inputContenuto').value.replace(/\n/g, '<br>');
+    document.querySelector('.inputContenuto').value = textareaContent;
     document.querySelector('.contenuto').innerHTML = textareaContent;
 }
 </script>
