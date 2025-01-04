@@ -5,7 +5,7 @@
     }
     function generaMenu($id=0){
         $menu = [];
-        $result = $GLOBALS["conn"]->query("select nome, link from navigatore where padre = $id order by id");
+        $result = $GLOBALS["conn"]->query("select id, nome, link from navigatore where padre = $id order by id");
         while($row = $result->fetch_assoc()){
             array_push($menu, $row);
         }
@@ -15,7 +15,7 @@
                 <a href='<?php echo $voce['link']?>'>
                     <?php echo $voce['nome']?>
                 </a>
-                <?php if(hasSubElement($id)) generaMenu($voce['id']); ?>
+                <?php if(hasSubElement($voce['id'])) generaMenu($voce['id']); ?>
             </li>
         <?php
         }
