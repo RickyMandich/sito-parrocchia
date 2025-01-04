@@ -34,6 +34,7 @@
                 <?php
             };?>
         </main>
+        <?php generaMenu();?>
         <?php require_once "footer.php";?>
     </body>
 </html>
