@@ -8,11 +8,14 @@
     </head>
     <body>
         <?php
+            require_once "intestazione.php";
+            require_once "navigatore.php";
             if(isset($_GET['id'])){
                 
             }else{
                 generaMenu();
             }
+            require_once "footer.php";
         ?>
     </body>
 </html>
