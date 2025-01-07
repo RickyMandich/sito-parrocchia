@@ -37,6 +37,7 @@
 
                 $query = "SELECT * FROM navigatore WHERE id != $id";
                 $result = $conn->query($query);
+                $nodi = [];
                 while($row = $result->fetch_assoc()){
                     if(!in_array($row, $eredi)){
                         array_push($nodi, $row);
