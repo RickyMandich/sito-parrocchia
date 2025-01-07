@@ -76,11 +76,11 @@
                         <?php
                     }else{
                         ?>
-                        <span class="relative">
+                        <div>
                             <form id="elimina" action="/deleteMenu/<?php echo $id; ?>">
                                 <input type="submit" value="Elimina">
                             </form>
-                        </span>
+                        </div>
                         <?php
                     }
             }else{
@@ -105,12 +105,7 @@
         display: block;
         width: 100px;
     }
-    #salva, #elimina{
-        float: right;
-        width: 48%;
-        transform: translateY(-10vh);
-    }
-    .relative{
-        position: relative;
+    form{
+        display:block;
     }
 </style>
