@@ -27,6 +27,7 @@
                 $nome = $_GET['nome'];
                 $link = $_GET['link'];
                 $padre = $_GET['padre'];
+                echo "UPDATE navigatore SET nome = '$nome', link = '$link', padre = $padre WHERE id = $id";
                 $conn->query("UPDATE navigatore SET nome = '$nome', link = '$link', padre = $padre WHERE id = $id");
                 ?><meta http-equiv="refresh" content="0; url=/editMenu"><?php
             }else if(isset($_GET['id'])){
