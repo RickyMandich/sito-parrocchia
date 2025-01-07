@@ -78,7 +78,7 @@
                     }else{
                         ?>
                         <div>
-                            <form id="elimina" action="/deleteMenu/<?php echo $id; ?>">
+                            <form action="/deleteMenu/<?php echo $id; ?>">
                                 <input type="submit" id="elimina" value="Elimina">
                             </form>
                         </div>
