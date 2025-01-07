@@ -16,7 +16,7 @@
                     <a href='<?php echo !$edit?$voce['link']:"/editMenu/".$voce['id']?>'>
                         <?php echo $voce['nome']?>
                     </a>
-                    <?php if(hasSubElement($voce['id'])) generaMenu($voce['id']); ?>
+                    <?php if(hasSubElement($voce['id'])) generaMenu($voce['id'], $edit); ?>
                 </li>
                 <?php
         }
