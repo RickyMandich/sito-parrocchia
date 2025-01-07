@@ -19,7 +19,6 @@ if(admin()):
             <input type="submit" value="crea">
         </form>
     <?php else: 
-        //$conn->query("insert into navigatore (nome, link, padre) values ('{$_GET['nome']}', '{$_GET['link']}', {$_GET['padre']})");
-        echo "insert into navigatore (nome, link, padre) values ('{$_GET['nome']}', '{$_GET['link']}', {$_GET['padre']})";
+        $conn->query("insert into navigatore (nome, link, padre) values ('{$_GET['nome']}', '{$_GET['link']}', {$_GET['padre']})");
     endif;?>
 <?php endif; ?>
