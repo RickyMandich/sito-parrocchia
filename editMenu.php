@@ -64,12 +64,13 @@
                 <?php
                     if($conn->query("select * from navigatore where padre = $id")->fetch_assoc()){
                         ?>
-                        <form action="/deleteMenu/<?php echo $id; ?>">
-                            <input type="submit" value="Elimina">
+                            non puoi eliminare questo elemento visto che ha dei figli
                         <?php
                     }else{
                         ?>
-                            non puoi eliminare questo elemento visto che ha dei figli
+                        <form action="/deleteMenu/<?php echo $id; ?>">
+                            <input type="submit" value="Elimina">
+                        </form>
                         <?php
                     }
             }else{
