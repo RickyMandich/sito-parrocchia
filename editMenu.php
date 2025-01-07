@@ -77,7 +77,7 @@
                 generaMenu(edit:true);
             }
             ?>
-            
+            <a href="/newMenu">Crea nuovo elemento</a>
             <?php
             require_once "footer.php";
         ?>
