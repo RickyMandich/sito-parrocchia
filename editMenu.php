@@ -108,7 +108,7 @@
     #salva, #elimina{
         float: right;
         width: 48%;
-        transform: translateY(10vh);
+        transform: translateY(-10vh);
     }
     .relative{
         position: relative;
