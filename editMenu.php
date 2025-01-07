@@ -67,7 +67,7 @@
                             </option>
                         <?php endforeach; ?>
                     </select>
-                    <input type="submit" value="Salva">
+                    <input type="submit" id="salva" value="Salva">
                 </form>
                 <?php
                     if($conn->query("select * from navigatore where padre = $id")->fetch_assoc()){
@@ -76,7 +76,7 @@
                         <?php
                     }else{
                         ?>
-                        <form action="/deleteMenu/<?php echo $id; ?>">
+                        <form id="elimina" action="/deleteMenu/<?php echo $id; ?>">
                             <input type="submit" value="Elimina">
                         </form>
                         <?php
@@ -103,8 +103,9 @@
         display: block;
         width: 100px;
     }
-    input[type="submit"] {
+    #salva, #elimina{
         float: right;
         width: 48%;
+        transform: translateY(10vh);
     }
 </style>
