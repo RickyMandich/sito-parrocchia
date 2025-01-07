@@ -79,7 +79,7 @@
                         ?>
                         <div>
                             <form id="elimina" action="/deleteMenu/<?php echo $id; ?>">
-                                <input type="submit" value="Elimina">
+                                <input type="submit" id="elimina" value="Elimina">
                             </form>
                         </div>
                         <?php
@@ -108,5 +108,11 @@
     }
     form{
         display:block;
+    }
+    #salva{
+        background-color: green;
+    }
+    #elimina{
+        background-color: red;
     }
 </style>
