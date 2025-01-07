@@ -24,6 +24,7 @@
                 return $figli;
             }
             if(isset($_GET['nome'])){
+                $id = $_GET['id'];
                 $nome = $_GET['nome'];
                 $link = $_GET['link'];
                 $padre = $_GET['padre'];
