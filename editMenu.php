@@ -53,7 +53,7 @@
                 }
                 ?>
 
-                <form method="get" action="/editMenu/<?php echo $id; ?>">
+                <form method="get" class="relative" action="/editMenu/<?php echo $id; ?>">
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($nome); ?>" required>
                     <label for="link">Link:</label>
@@ -76,9 +76,11 @@
                         <?php
                     }else{
                         ?>
-                        <form id="elimina" action="/deleteMenu/<?php echo $id; ?>">
-                            <input type="submit" value="Elimina">
-                        </form>
+                        <span class="relative">
+                            <form id="elimina" action="/deleteMenu/<?php echo $id; ?>">
+                                <input type="submit" value="Elimina">
+                            </form>
+                        </span>
                         <?php
                     }
             }else{
@@ -107,5 +109,8 @@
         float: right;
         width: 48%;
         transform: translateY(10vh);
+    }
+    .relative{
+        position: relative;
     }
 </style>
