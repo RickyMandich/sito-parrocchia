@@ -67,6 +67,7 @@
                             </option>
                         <?php endforeach; ?>
                     </select>
+                    <br>
                     <input type="submit" id="salva" value="Salva">
                 </form>
                 <?php
