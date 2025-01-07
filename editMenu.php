@@ -61,7 +61,6 @@
                             </option>
                         <?php endforeach; ?>
                     </select>
-                    <br>
                     <input type="submit" value="Salva">
                 </form>
                 <?php
@@ -77,7 +76,7 @@
         width: 48%;
     }
     label{
-        display: inline-block;
+        display: block;
         width: 100px;
     }
 </style>
