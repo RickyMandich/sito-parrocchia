@@ -14,7 +14,7 @@
             if(isset($_GET['id'])){
                 
             }else{
-            generaMenu(edit:true);
+                generaMenu(edit:true);
             }
             require_once "footer.php";
         ?>
