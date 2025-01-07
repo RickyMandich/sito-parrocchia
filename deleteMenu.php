@@ -16,7 +16,7 @@ if (admin()) {
     } else {
         echo "ID non specificato.";
     }
-    ?><meta http-equiv="refresh" content="0;url=/editMenu/<?php echo $id; ?>"><?php
+    ?><meta http-equiv="refresh" content="0;url=/editMenu"><?php
 } else {?>
     <meta http-equiv="refresh" content="0;url=/home">
 <?php }?>
