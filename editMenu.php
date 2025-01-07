@@ -72,3 +72,12 @@
         ?>
     </body>
 </html>
+<style>
+    input[type="text"] {
+        width: 48%;
+    }
+    label{
+        display: inline-block;
+        width: 100px;
+    }
+</style>
