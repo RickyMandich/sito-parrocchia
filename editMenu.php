@@ -62,6 +62,16 @@
                     <input type="submit" value="Salva">
                 </form>
                 <?php
+                    if($conn->query("select * from navigatore where padre = $id")->fetch_assoc()){
+                        ?>
+                        <form action="/deleteMenu/<?php echo $id; ?>">
+                            <input type="submit" value="Elimina">
+                        <?php
+                    }else{
+                        ?>
+                            non puoi eliminare questo elemento visto che ha dei figli
+                        <?php
+                    }
             }else{
                 generaMenu(edit:true);
             }
@@ -76,5 +86,9 @@
     label{
         display: block;
         width: 100px;
+    }
+    input[type="submit"] {
+        float: right;
+        width: 48%;
     }
 </style>

@@ -4,6 +4,7 @@ RewriteEngine On
    RewriteRule ^edit/([0-9]+)/?$ edit.php?id=$1 [L,QSA]
    RewriteRule ^rimuovi/([0-9]+)/?$ rimuovi.php?id=$1 [L,QSA]
    RewriteRule ^editMenu/([0-9]+)/?$ editMenu.php?id=$1 [L,QSA]
+   RewriteRule ^deleteMenu/([0-9]+)/?$ deleteMenu.php?id=$1 [L,QSA]
 
    # Le tue regole esistenti
    RewriteCond %{REQUEST_FILENAME} !-d
