@@ -23,7 +23,13 @@
                 }
                 return $figli;
             }
-            if(isset($_GET['id'])){
+            if(isset($_GET['nome'])){
+                $nome = $_GET['nome'];
+                $link = $_GET['link'];
+                $padre = $_GET['padre'];
+                $conn->query("UPDATE navigatore SET nome = '$nome', link = '$link', padre = $padre WHERE id = $id");
+                ?><meta http-equiv="refresh" content="0; url=/editMenu"><?php
+            }else if(isset($_GET['id'])){
                 $id = $_GET['id'];
                 $query = "SELECT * FROM navigatore WHERE id = $id";
                 $result = $conn->query($query);
@@ -75,14 +81,14 @@
                     }
             }else{
                 generaMenu(edit:true);
+                ?>
+                <ul>
+                    <li>
+                        <a href="/newMenu">Crea nuovo elemento</a>
+                    </li>
+                </ul>
+                <?php
             }
-            ?>
-            <ul>
-                <li>
-                    <a href="/newMenu">Crea nuovo elemento</a>
-                </li>
-            </ul>
-            <?php
             require_once "footer.php";
         ?>
     </body>
