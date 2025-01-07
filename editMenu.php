@@ -48,10 +48,8 @@
                 <form method="get" action="/editMenu/<?php echo $id; ?>">
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($nome); ?>" required>
-                    <br>
                     <label for="link">Link:</label>
                     <input type="text" id="link" name="link" value="<?php echo htmlspecialchars($link); ?>" required>
-                    <br>
                     <label for="padre">Padre:</label>
                     <select id="padre" name="padre">
                         <option value="0">Nessuno</option>
