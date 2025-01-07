@@ -20,5 +20,6 @@ if(admin()):
         </form>
     <?php else: 
         $conn->query("insert into navigatore (nome, link, padre) values ('{$_GET['nome']}', '{$_GET['link']}', {$_GET['padre']})");
+        ?><meta http-equiv="refresh" content="0; url=/editMenu"><?php
     endif;?>
 <?php endif; ?>
