@@ -95,6 +95,10 @@
                     </ul>
                     <?php
                 }
+            }else{
+                ?>
+                    <meta http-equiv="refresh" content="0; url=/login?from=editMenu">
+                <?php
             }
             require_once "footer.php";
         ?>
