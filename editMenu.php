@@ -11,88 +11,90 @@
         <?php
             require_once "intestazione.php";
             require_once "navigatore.php";
-            function getEredi($id){
-                $result = $GLOBALS["conn"]->query("select * from navigatore where padre = $id");
-                $figli = [];
-                while($row = $result->fetch_assoc()){
-                    array_push($figli, $row);
-                    $nipoti = getEredi($row['id']);
-                    foreach($nipoti as $nipote){
-                        array_push($figli, $nipote);
+            if(admin()){
+                function getEredi($id){
+                    $result = $GLOBALS["conn"]->query("select * from navigatore where padre = $id");
+                    $figli = [];
+                    while($row = $result->fetch_assoc()){
+                        array_push($figli, $row);
+                        $nipoti = getEredi($row['id']);
+                        foreach($nipoti as $nipote){
+                            array_push($figli, $nipote);
+                        }
                     }
+                    return $figli;
                 }
-                return $figli;
-            }
-            if(isset($_GET['nome'])){
-                $id = $_GET['id'];
-                $nome = $_GET['nome'];
-                $link = $_GET['link'];
-                $padre = $_GET['padre'];
-                echo "UPDATE navigatore SET nome = '$nome', link = '$link', padre = $padre WHERE id = $id";
-                $conn->query("UPDATE navigatore SET nome = '$nome', link = '$link', padre = $padre WHERE id = $id");
-                ?><meta http-equiv="refresh" content="0; url=/editMenu"><?php
-            }else if(isset($_GET['id'])){
-                $id = $_GET['id'];
-                $query = "SELECT * FROM navigatore WHERE id = $id";
-                $result = $conn->query($query);
-                $row = $result->fetch_assoc();
+                if(isset($_GET['nome'])){
+                    $id = $_GET['id'];
+                    $nome = $_GET['nome'];
+                    $link = $_GET['link'];
+                    $padre = $_GET['padre'];
+                    echo "UPDATE navigatore SET nome = '$nome', link = '$link', padre = $padre WHERE id = $id";
+                    $conn->query("UPDATE navigatore SET nome = '$nome', link = '$link', padre = $padre WHERE id = $id");
+                    ?><meta http-equiv="refresh" content="0; url=/editMenu"><?php
+                }else if(isset($_GET['id'])){
+                    $id = $_GET['id'];
+                    $query = "SELECT * FROM navigatore WHERE id = $id";
+                    $result = $conn->query($query);
+                    $row = $result->fetch_assoc();
 
-                $nome = $row['nome'];
-                $link = $row['link'];
-                $padre = $row['padre'];
+                    $nome = $row['nome'];
+                    $link = $row['link'];
+                    $padre = $row['padre'];
 
-                $eredi = getEredi($id);
+                    $eredi = getEredi($id);
 
-                $query = "SELECT * FROM navigatore WHERE id != $id";
-                $result = $conn->query($query);
-                $nodi = [];
-                while($row = $result->fetch_assoc()){
-                    if(!in_array($row, $eredi)){
-                        array_push($nodi, $row);
+                    $query = "SELECT * FROM navigatore WHERE id != $id";
+                    $result = $conn->query($query);
+                    $nodi = [];
+                    while($row = $result->fetch_assoc()){
+                        if(!in_array($row, $eredi)){
+                            array_push($nodi, $row);
+                        }
                     }
+                    ?>
+
+                    <form method="get" class="relative" action="/editMenu/<?php echo $id; ?>">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($nome); ?>" required>
+                        <label for="link">Link:</label>
+                        <input type="text" id="link" name="link" value="<?php echo htmlspecialchars($link); ?>" required>
+                        <label for="padre">Padre:</label>
+                        <select id="padre" name="padre">
+                            <option value="0">Nessuno</option>
+                            <?php foreach ($nodi as $row): ?>
+                                <option value="<?php echo $row['id']; ?>" <?php if ($row['id'] == $padre) echo 'selected'; ?>>
+                                    <?php echo htmlspecialchars($row['nome']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <br>
+                        <input type="submit" id="salva" value="Salva">
+                    </form>
+                    <?php
+                        if($conn->query("select * from navigatore where padre = $id")->fetch_assoc()){
+                            ?>
+                                non puoi eliminare questo elemento visto che ha dei figli
+                            <?php
+                        }else{
+                            ?>
+                            <div>
+                                <form action="/deleteMenu/<?php echo $id; ?>">
+                                    <input type="submit" id="elimina" value="Elimina">
+                                </form>
+                            </div>
+                            <?php
+                        }
+                }else{
+                    generaMenu(edit:true);
+                    ?>
+                    <ul>
+                        <li>
+                            <a href="/newMenu">Crea nuovo elemento</a>
+                        </li>
+                    </ul>
+                    <?php
                 }
-                ?>
-
-                <form method="get" class="relative" action="/editMenu/<?php echo $id; ?>">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($nome); ?>" required>
-                    <label for="link">Link:</label>
-                    <input type="text" id="link" name="link" value="<?php echo htmlspecialchars($link); ?>" required>
-                    <label for="padre">Padre:</label>
-                    <select id="padre" name="padre">
-                        <option value="0">Nessuno</option>
-                        <?php foreach ($nodi as $row): ?>
-                            <option value="<?php echo $row['id']; ?>" <?php if ($row['id'] == $padre) echo 'selected'; ?>>
-                                <?php echo htmlspecialchars($row['nome']); ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                    <br>
-                    <input type="submit" id="salva" value="Salva">
-                </form>
-                <?php
-                    if($conn->query("select * from navigatore where padre = $id")->fetch_assoc()){
-                        ?>
-                            non puoi eliminare questo elemento visto che ha dei figli
-                        <?php
-                    }else{
-                        ?>
-                        <div>
-                            <form action="/deleteMenu/<?php echo $id; ?>">
-                                <input type="submit" id="elimina" value="Elimina">
-                            </form>
-                        </div>
-                        <?php
-                    }
-            }else{
-                generaMenu(edit:true);
-                ?>
-                <ul>
-                    <li>
-                        <a href="/newMenu">Crea nuovo elemento</a>
-                    </li>
-                </ul>
-                <?php
             }
             require_once "footer.php";
         ?>
