@@ -37,7 +37,7 @@ if(!admin()){
                 $query = $conn->query("select email, nome from utenti");
                 while ($row = $query->fetch_assoc()) {
                     $to = $row['email'];
-                    mail($to, $subject, str_replace("<utente", $row["nome"], $message), $headers);
+                    mail($to, $subject, str_replace("<utente>", $row["nome"], $message), $headers);
                 }
                 ?>
                 <meta http-equiv="refresh" content="5; url=creaArticolo">
